@@ -1,0 +1,1462 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="http://schemas.uipath.com/workflow/activities/ftp" xmlns:p1="http://schemas.uipath.com/workflow/activities/ocr" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:this="clr-namespace:" xmlns:uga="clr-namespace:UiPath.GSuite.Activities;assembly=UiPath.GSuite.Activities" xmlns:ugade="clr-namespace:UiPath.GSuite.Activities.Drive.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugage="clr-namespace:UiPath.GSuite.Activities.General.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugage1="clr-namespace:UiPath.GSuite.Activities.Gmail.Enums;assembly=UiPath.GSuite.Activities" xmlns:ugagm="clr-namespace:UiPath.GSuite.Activities.Gmail.Models;assembly=UiPath.GSuite.Activities" xmlns:ugagt="clr-namespace:UiPath.GSuite.Activities.Gmail.Triggers;assembly=UiPath.GSuite.Activities" xmlns:ugm="clr-namespace:UiPath.GSuite.Models;assembly=UiPath.GSuite" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:umae="clr-namespace:UiPath.MicrosoftOffice365.Activities.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaf="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafc="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Contracts;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafe="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umafm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umaft="clr-namespace:UiPath.MicrosoftOffice365.Activities.Files.Triggers;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umas="clr-namespace:UiPath.MicrosoftOffice365.Activities.Sharepoint;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umas1="clr-namespace:UiPath.MicrosoftOffice365.Activities.SharePoint;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umase="clr-namespace:UiPath.MicrosoftOffice365.Activities.Sharepoint.Enums;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umasm="clr-namespace:UiPath.MicrosoftOffice365.Activities.Sharepoint.Models;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umast="clr-namespace:UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:umfm="clr-namespace:UiPath.MicrosoftOffice365.Files.Models;assembly=UiPath.MicrosoftOffice365" xmlns:umm="clr-namespace:UiPath.MicrosoftOffice365.Models;assembly=UiPath.MicrosoftOffice365" xmlns:upap="clr-namespace:UiPath.PDF.Activities.PDF;assembly=UiPath.PDF.Activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:usau="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.GSuite.Activities" xmlns:usau1="clr-namespace:UiPath.Shared.Activities.Utils;assembly=UiPath.MicrosoftOffice365.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="UiPathEventConnector" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEvent" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectType" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathEventObjectId" Type="InArgument(x:String)" />
+    <x:Property Name="UiPathAdditionalEventData" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.UiPathEventConnector>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventConnector>
+  <this:Main.UiPathEvent>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEvent>
+  <this:Main.UiPathEventObjectType>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectType>
+  <this:Main.UiPathEventObjectId>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathEventObjectId>
+  <this:Main.UiPathAdditionalEventData>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.UiPathAdditionalEventData>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:Annotation.AnnotationText>UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9</sap2010:Annotation.AnnotationText>
+  <sap:VirtualizedContainerService.HintSize>784,28109</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.Core.Activities.OCR.Engines</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+      <x:String>UiPath.Web</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>UiPath.Database</x:String>
+      <x:String>UiPath.Database.Activities</x:String>
+      <x:String>UiPath.PDF</x:String>
+      <x:String>UiPath.PDF.Activities</x:String>
+      <x:String>UiPath.PDF.Activities.PDF</x:String>
+      <x:String>UiPath.Vision.Core.OCR</x:String>
+      <x:String>UiPath.OCR.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Utils</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files</x:String>
+      <x:String>UiPath.Shared.Activities.ConnectionService.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Filters</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Files.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Utilities</x:String>
+      <x:String>UiPath.Shared.Activities.Triggers</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Triggers</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Models.Filters</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Sharepoint.Contracts.Enums</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Sharepoint.Triggers</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.Files.Contracts</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Models</x:String>
+      <x:String>UiPath.MicrosoftOffice365.Activities.SharePoint</x:String>
+      <x:String>UiPath.FTP</x:String>
+      <x:String>UiPath.FTP.Enums</x:String>
+      <x:String>UiPath.FTP.Activities</x:String>
+      <x:String>UiPath.GSuite.Calendar.Models</x:String>
+      <x:String>UiPath.GSuite.Activities</x:String>
+      <x:String>UiPath.GSuite.Models</x:String>
+      <x:String>UiPath.Shared.Api.Google.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Filters</x:String>
+      <x:String>UiPath.GSuite.Activities.Filters</x:String>
+      <x:String>UiPath.GSuite.Gmail.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Models</x:String>
+      <x:String>UiPath.GSuite.Activities.Utilities</x:String>
+      <x:String>UiPath.GSuite.Activities.Gmail.Triggers</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.IMAP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>UiPath.Mail.Implementation</x:String>
+      <x:String>UiPath.GSuite.Activities.General.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Drive.Enums</x:String>
+      <x:String>UiPath.GSuite.Activities.Enums</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Web</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.PDF</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365</AssemblyReference>
+      <AssemblyReference>UiPath.FTP</AssemblyReference>
+      <AssemblyReference>UiPath.FTP.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite</AssemblyReference>
+      <AssemblyReference>UiPath.GSuite.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="976,27805" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Invoices" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="704,971" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,860" sap2010:WorkflowViewState.IdRef="Sequence_28">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence sap:VirtualizedContainerService.HintSize="484,800" sap2010:WorkflowViewState.IdRef="Sequence_27">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uga:HttpRequestConnections Body="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" HeadersVariable="{x:Null}" ParametersVariable="{x:Null}" ResponseContent="{x:Null}" ResponseHeaders="{x:Null}" ResponseStatus="{x:Null}" Scopes="{x:Null}" AuthScopesInvalid="False" DisplayName="HTTP Request" HeadersInputMode="Build" sap:VirtualizedContainerService.HintSize="450,385" sap2010:WorkflowViewState.IdRef="HttpRequestConnections_1" ParametersInputMode="Build" RequestMethod="GET" RequestUrl="https://www.googleapis.com" UseConnectionService="True">
+              <uga:HttpRequestConnections.Headers>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </uga:HttpRequestConnections.Headers>
+              <uga:HttpRequestConnections.HeadersBackup>
+                <usau:BackupSlot x:TypeArguments="ugage:DictionaryInputMode" StoredValue="Build">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="ugage:DictionaryInputMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:HttpRequestConnections.HeadersBackup>
+              <uga:HttpRequestConnections.Parameters>
+                <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+              </uga:HttpRequestConnections.Parameters>
+              <uga:HttpRequestConnections.ParametersBackup>
+                <usau:BackupSlot x:TypeArguments="ugage:DictionaryInputMode" StoredValue="Build">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="ugage:DictionaryInputMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:HttpRequestConnections.ParametersBackup>
+            </uga:HttpRequestConnections>
+            <uga:GSuiteApplicationScope ApiKey="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemFullPath="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserRuntimeItemFriendlyName="{x:Null}" BrowserRuntimeItemFullPath="{x:Null}" BrowserRuntimeItemId="{x:Null}" BrowserRuntimeParentItemId="{x:Null}" BucketId="{x:Null}" BucketName="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Connector="{x:Null}" ContinueOnError="{x:Null}" CredentialID="{x:Null}" CredentialSecret="{x:Null}" Folder="{x:Null}" KeyPath="{x:Null}" ManualRuntimeItemFullPath="{x:Null}" SecureCredentialSecret="{x:Null}" ServiceAccountEmail="{x:Null}" TimeoutMS="{x:Null}" UserEmail="{x:Null}" Account="Please select an account." AuthenticationType="OAuthClientID" BucketInputMode="Browse" ConfigLocation="PropertiesPanel" DataStoreLocation="DISK" DisplayName="Google Workspace Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="450,332" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" OAuthClient="UIPATH" Password="notasecret" RuntimeItemInputMode="Browse" Services="Unselected" UseConnectionService="False" User="PleaseSelectAnAccountId">
+              <uga:GSuiteApplicationScope.AuthenticationScopes>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </uga:GSuiteApplicationScope.AuthenticationScopes>
+              <uga:GSuiteApplicationScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="GSuiteScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </uga:GSuiteApplicationScope.Body>
+              <uga:GSuiteApplicationScope.BucketFullPathBackup>
+                <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:GSuiteApplicationScope.BucketFullPathBackup>
+              <uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+                <usau:BackupSlot x:TypeArguments="ugade:EDriveItemMode" StoredValue="{x:Null}">
+                  <usau:BackupSlot.BackupValues>
+                    <scg:Dictionary x:TypeArguments="ugade:EDriveItemMode, scg:List(x:Object)" />
+                  </usau:BackupSlot.BackupValues>
+                </usau:BackupSlot>
+              </uga:GSuiteApplicationScope.RuntimeItemFullPathBackup>
+            </uga:GSuiteApplicationScope>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="704,4704" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="518,4593" sap2010:WorkflowViewState.IdRef="Sequence_22">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Sequence DisplayName="Gmail And Outlook" sap:VirtualizedContainerService.HintSize="484,4533" sap2010:WorkflowViewState.IdRef="Sequence_21">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umab:ArchiveMailX MailMessage="{x:Null}" DisplayName="Archive Email" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="ArchiveMailX_1" />
+            <umab:DeleteMailX MailMessage="{x:Null}" DisplayName="Delete Email" sap:VirtualizedContainerService.HintSize="450,133" sap2010:WorkflowViewState.IdRef="DeleteMailX_1" />
+            <umab:ForEachEmailX MailFilter="{x:Null}" Mails="{x:Null}" DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="450,384" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" NumberOfEmailsLimit="100" UnreadOnly="False" WithAttachmentsOnly="False">
+              <umab:ForEachEmailX.Body>
+                <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
+                  <ActivityAction.Argument1>
+                    <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="CurrentMail" />
+                  </ActivityAction.Argument1>
+                  <ActivityAction.Argument2>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument2>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </umab:ForEachEmailX.Body>
+            </umab:ForEachEmailX>
+            <umab:ForwardMailX Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" MailMessage="{x:Null}" NewSubject="{x:Null}" To="{x:Null}" DisplayName="Forward Email" sap:VirtualizedContainerService.HintSize="450,405" sap2010:WorkflowViewState.IdRef="ForwardMailX_1" MaxBodyDocumentSizeMB="2" UseDocumentAsBody="False">
+              <umab:ForwardMailX.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </umab:ForwardMailX.Files>
+              <umab:ForwardMailX.HtmlBodyFromFile>
+                <umabh:HtmlContentArgument FilePath="{x:Null}" HtmlBody="{x:Null}">
+                  <umabh:HtmlContentArgument.RuntimeImages>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </umabh:HtmlContentArgument.RuntimeImages>
+                  <umabh:HtmlContentArgument.ValueMappings>
+                    <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="0" />
+                  </umabh:HtmlContentArgument.ValueMappings>
+                </umabh:HtmlContentArgument>
+              </umab:ForwardMailX.HtmlBodyFromFile>
+            </umab:ForwardMailX>
+            <umab:GetEmailById Account="{x:Null}" EmailId="{x:Null}" Result="{x:Null}" DisplayName="Get Email By Id" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="GetEmailById_1" />
+            <umab:MarkMailAsReadX MailMessage="{x:Null}" DisplayName="Mark Email As Read/Unread" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="MarkMailAsReadX_1" MarkAs="Read" />
+            <umab:MoveMailX MailFolder="{x:Null}" MailMessage="{x:Null}" DisplayName="Move Email" sap:VirtualizedContainerService.HintSize="450,165" sap2010:WorkflowViewState.IdRef="MoveMailX_1" />
+            <umab:ReplyToMailX AdditionalCc="{x:Null}" AdditionalTo="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" HtmlBodyFromText="{x:Null}" MailMessage="{x:Null}" NewSubject="{x:Null}" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="450,400" sap2010:WorkflowViewState.IdRef="ReplyToMailX_1" MaxBodyDocumentSizeMB="2" ReplyToAll="False" UseDocumentAsBody="False">
+              <umab:ReplyToMailX.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </umab:ReplyToMailX.Files>
+              <umab:ReplyToMailX.HtmlBodyFromFile>
+                <umabh:HtmlContentArgument FilePath="{x:Null}" HtmlBody="{x:Null}">
+                  <umabh:HtmlContentArgument.RuntimeImages>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </umabh:HtmlContentArgument.RuntimeImages>
+                  <umabh:HtmlContentArgument.ValueMappings>
+                    <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="0" />
+                  </umabh:HtmlContentArgument.ValueMappings>
+                </umabh:HtmlContentArgument>
+              </umab:ReplyToMailX.HtmlBodyFromFile>
+            </umab:ReplyToMailX>
+            <umab:SaveMailX FileName="{x:Null}" FolderPath="{x:Null}" MailMessage="{x:Null}" DisplayName="Save Email" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="SaveMailX_1" />
+            <umab:SaveMailAttachmentsX Attachments="{x:Null}" FolderPath="{x:Null}" Message="{x:Null}" DisplayName="Save Email Attachments" ExcludeInlineAttachments="True" sap:VirtualizedContainerService.HintSize="450,260" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_1" OverwriteExisting="False" />
+            <umab:SendCalendarInviteX Account="{x:Null}" Description="{x:Null}" EndDate="{x:Null}" Location="{x:Null}" OptionalAttendees="{x:Null}" RequiredAttendees="{x:Null}" StartDate="{x:Null}" StartTime="{x:Null}" Subject="{x:Null}" AlertInterval="00:15:00" AllDayEvent="False" BusyStatus="Busy" DailyRecurrenceStep="1" DailyRecurrenceType="EveryWeekDay" DisplayName="Send Calendar Invite" Duration="00:30:00" sap:VirtualizedContainerService.HintSize="450,648" sap2010:WorkflowViewState.IdRef="SendCalendarInviteX_1" IsRecurring="False" MaxBodyDocumentSizeMB="2" MonthlyRecurrenceDay="Day" MonthlyRecurrenceDayIndex="1" MonthlyRecurrenceStep="1" MonthlyRecurrenceType="EveryNthDayOnEveryXthMonth" MonthlyRecurrenceWeek="First" RecurrenceEndType="NoEndDate" RecurrencePatternType="Daily" RecurrenceTotalOccurrences="1" SaveWithoutSending="True" WeeklyRecurrenceDays="None" WeeklyRecurrenceStep="1" YearlyRecurrenceDay="Day" YearlyRecurrenceDayIndex="1" YearlyRecurrenceMonth="January" YearlyRecurrenceStep="1" YearlyRecurrenceType="EveryNthDayOfMonth" YearlyRecurrenceWeek="First">
+              <umab:SendCalendarInviteX.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </umab:SendCalendarInviteX.Files>
+            </umab:SendCalendarInviteX>
+            <umab:SendMailX Account="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" HtmlBodyFromText="{x:Null}" ReplyTo="{x:Null}" Subject="{x:Null}" To="{x:Null}" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="450,400" sap2010:WorkflowViewState.IdRef="SendMailX_1" Importance="Normal" MaxBodyDocumentSizeMB="2" Sensitivity="Normal" UseDocumentAsBody="False">
+              <umab:SendMailX.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </umab:SendMailX.Files>
+              <umab:SendMailX.HtmlBodyFromFile>
+                <umabh:HtmlContentArgument FilePath="{x:Null}" HtmlBody="{x:Null}">
+                  <umabh:HtmlContentArgument.RuntimeImages>
+                    <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+                  </umabh:HtmlContentArgument.RuntimeImages>
+                  <umabh:HtmlContentArgument.ValueMappings>
+                    <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="0" />
+                  </umabh:HtmlContentArgument.ValueMappings>
+                </umabh:HtmlContentArgument>
+              </umab:SendMailX.HtmlBodyFromFile>
+            </umab:SendMailX>
+            <umab:OutlookApplicationCard Account="{x:Null}" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="450,303" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+              <umab:OutlookApplicationCard.Body>
+                <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </umab:OutlookApplicationCard.Body>
+            </umab:OutlookApplicationCard>
+            <umab:GmailApplicationCard ClientId="{x:Null}" ClientSecret="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="Please select an account" DisplayName="Use Gmail" sap:VirtualizedContainerService.HintSize="450,303" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+              <umab:GmailApplicationCard.Body>
+                <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </umab:GmailApplicationCard.Body>
+              <umab:GmailApplicationCard.EmailAddress>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </umab:GmailApplicationCard.EmailAddress>
+            </umab:GmailApplicationCard>
+            <umab:ExchangeApplicationCard ApplicationId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" SharedMailbox="{x:Null}" TenantId="{x:Null}" Account="Please select an account" DisplayName="Use Outlook 365" sap:VirtualizedContainerService.HintSize="450,336" sap2010:WorkflowViewState.IdRef="ExchangeApplicationCard_1" UseConnectionService="False">
+              <umab:ExchangeApplicationCard.Body>
+                <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Exchange" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Sequence>
+                </ActivityAction>
+              </umab:ExchangeApplicationCard.Body>
+              <umab:ExchangeApplicationCard.EmailAddress>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </umab:ExchangeApplicationCard.EmailAddress>
+            </umab:ExchangeApplicationCard>
+          </Sequence>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="704,517" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,406" sap2010:WorkflowViewState.IdRef="Sequence_18">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetIMAPMailMessages ClientName="{x:Null}" ClientVersion="{x:Null}" Email="{x:Null}" FilterExpression="{x:Null}" Messages="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" EnableSSL="True" FilterExpressionCharacterSet="US-ASCII" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" IgnoreCRL="False" MailFolder="Inbox" MarkAsRead="False" OnlyUnreadMessages="True" OrderByDate="NewestFirst" SecureConnection="Auto" Top="30" />
+          <ui:MoveIMAPMailMessageToFolder ClientName="{x:Null}" ClientVersion="{x:Null}" Email="{x:Null}" FromFolder="{x:Null}" MailFolder="{x:Null}" MailMessage="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" UseOAuth="{x:Null}" DisplayName="Move IMAP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="382,120" sap2010:WorkflowViewState.IdRef="MoveIMAPMailMessageToFolder_1" IgnoreCRL="False" SecureConnection="Auto" />
+          <ui:SendMail Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Password="{x:Null}" Port="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" Server="{x:Null}" Subject="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" UseOAuth="{x:Null}" DisplayName="Send SMTP Mail Message" EnableSSL="True" sap:VirtualizedContainerService.HintSize="382,169" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" SecureConnection="Auto">
+            <ui:SendMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </ui:SendMail.Files>
+          </ui:SendMail>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="704,200" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_20">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LoginAndExtractData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="704,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Data_Manipulation\LoginAndExtractData.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoiceData">[dt_Invoices]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="704,21245" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="668,21143" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="GetAsset" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeserializeJson x:TypeArguments="njl:JObject" JsonObject="{x:Null}" JsonSample="{x:Null}" JsonString="{x:Null}" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="634,122" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" />
+          <ui:DeserializeJsonArray JsonArray="{x:Null}" JsonString="{x:Null}" DisplayName="Deserialize JSON Array" sap:VirtualizedContainerService.HintSize="634,92" sap2010:WorkflowViewState.IdRef="DeserializeJsonArray_1" />
+          <uga:GetCalendarsConnections Calendars="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" DefaultCalendar="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Get Calendars" sap:VirtualizedContainerService.HintSize="634,144" sap2010:WorkflowViewState.IdRef="GetCalendarsConnections_1" UseConnectionService="True" />
+          <uga:ApplyEmailLabelsConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" ManualEntrySelectedLabels="{x:Null}" SelectedLabels="{x:Null}" AllLabels="W3siSWQiOiJMYWJlbF8zIiwiTmFtZSI6IklOQk9YXC9OYXJlbl9CYWdhdmF0aHkiLCJUeXBlIjoidXNlciJ9LHsiSWQiOiJMYWJlbF80IiwiTmFtZSI6IklOQk9YXC9BcnVuIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNSIsIk5hbWUiOiJJTkJPWFwvU3VyeWEiLCJUeXBlIjoidXNlciJ9XQ==" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Apply Gmail Labels" sap:VirtualizedContainerService.HintSize="634,247" sap2010:WorkflowViewState.IdRef="ApplyEmailLabelsConnections_1" LabelSelectionMode="MultiSelect" UseConnectionService="True">
+            <uga:ApplyEmailLabelsConnections.SelectedLabelsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:LabelInputMode" StoredValue="MultiSelect">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:LabelInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:ApplyEmailLabelsConnections.SelectedLabelsBackup>
+          </uga:ApplyEmailLabelsConnections>
+          <uga:ArchiveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Archive Email" sap:VirtualizedContainerService.HintSize="634,195" sap2010:WorkflowViewState.IdRef="ArchiveEmailConnections_1" UseConnectionService="True" />
+          <uga:DeleteEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Delete Email" sap:VirtualizedContainerService.HintSize="634,246" sap2010:WorkflowViewState.IdRef="DeleteEmailConnections_1" PermanentlyDelete="False" UseConnectionService="True" />
+          <uga:DownloadEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Download Email" sap:VirtualizedContainerService.HintSize="634,195" sap2010:WorkflowViewState.IdRef="DownloadEmailConnections_1" UseConnectionService="True" />
+          <uga:DownloadAttachmentsConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Download Email Attachments" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="634,246" sap2010:WorkflowViewState.IdRef="DownloadAttachmentsConnections_1" SearchMode="UseSimple" UseConnectionService="True" />
+          <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" Length="{x:Null}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMyIsIk5hbWUiOiJJTkJPWFwvTmFyZW5fQmFnYXZhdGh5IiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNCIsIk5hbWUiOiJJTkJPWFwvQXJ1biIsIlR5cGUiOiJ1c2VyIn0seyJJZCI6IkxhYmVsXzUiLCJOYW1lIjoiSU5CT1hcL1N1cnlhIiwiVHlwZSI6InVzZXIifV0=" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="For Each Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,362" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+            <uga:ForEachEmailConnections.Body>
+              <ActivityAction x:TypeArguments="ugm:GmailMessage, x:Int32">
+                <ActivityAction.Argument1>
+                  <DelegateInArgument x:TypeArguments="ugm:GmailMessage" Name="CurrentEmail" />
+                </ActivityAction.Argument1>
+                <ActivityAction.Argument2>
+                  <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentEmailIndex" />
+                </ActivityAction.Argument2>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </uga:ForEachEmailConnections.Body>
+            <uga:ForEachEmailConnections.Folder>
+              <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
+                <ugagm:FolderArgument.Backup>
+                  <usau:BackupSlot x:TypeArguments="ugage1:FolderInputMode" x:Name="__ReferenceID0" StoredValue="Browse">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="ugage1:FolderInputMode, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ugagm:FolderArgument.Backup>
+              </ugagm:FolderArgument>
+            </uga:ForEachEmailConnections.Folder>
+          </uga:ForEachEmailConnections>
+          <uga:ForwardEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" NewSubject="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Forward Email" sap:VirtualizedContainerService.HintSize="634,437" sap2010:WorkflowViewState.IdRef="ForwardEmailConnections_1" SaveAsDraft="True" UseConnectionService="True">
+            <uga:ForwardEmailConnections.AttachmentsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:AttachmentInputMode" StoredValue="UseExisting">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:AttachmentInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:ForwardEmailConnections.AttachmentsBackup>
+            <uga:ForwardEmailConnections.Body>
+              <InArgument x:TypeArguments="x:String" />
+            </uga:ForwardEmailConnections.Body>
+          </uga:ForwardEmailConnections>
+          <uga:GetEmailByIdConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" EmailId="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Get Email by ID" sap:VirtualizedContainerService.HintSize="634,184" sap2010:WorkflowViewState.IdRef="GetEmailByIdConnections_1" UseConnectionService="True" />
+          <uga:GetEmailListConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" CurrentIndex="{x:Null}" EmailList="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID1}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMyIsIk5hbWUiOiJJTkJPWFwvTmFyZW5fQmFnYXZhdGh5IiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNCIsIk5hbWUiOiJJTkJPWFwvQXJ1biIsIlR5cGUiOiJ1c2VyIn0seyJJZCI6IkxhYmVsXzUiLCJOYW1lIjoiSU5CT1hcL1N1cnlhIiwiVHlwZSI6InVzZXIifV0=" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Get Email List" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,235" sap2010:WorkflowViewState.IdRef="GetEmailListConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+            <uga:GetEmailListConnections.Folder>
+              <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
+                <ugagm:FolderArgument.Backup>
+                  <usau:BackupSlot x:TypeArguments="ugage1:FolderInputMode" x:Name="__ReferenceID1" StoredValue="Browse">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="ugage1:FolderInputMode, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ugagm:FolderArgument.Backup>
+              </ugagm:FolderArgument>
+            </uga:GetEmailListConnections.Folder>
+          </uga:GetEmailListConnections>
+          <uga:GetNewestEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID2}" ManualEntryFolder="{x:Null}" Result="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMyIsIk5hbWUiOiJJTkJPWFwvTmFyZW5fQmFnYXZhdGh5IiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNCIsIk5hbWUiOiJJTkJPWFwvQXJ1biIsIlR5cGUiOiJ1c2VyIn0seyJJZCI6IkxhYmVsXzUiLCJOYW1lIjoiSU5CT1hcL1N1cnlhIiwiVHlwZSI6InVzZXIifV0=" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Get Newest Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,235" sap2010:WorkflowViewState.IdRef="GetNewestEmailConnections_1" ImportantOnly="False" MarkAsRead="False" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
+            <uga:GetNewestEmailConnections.Folder>
+              <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
+                <ugagm:FolderArgument.Backup>
+                  <usau:BackupSlot x:TypeArguments="ugage1:FolderInputMode" x:Name="__ReferenceID2" StoredValue="Browse">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="ugage1:FolderInputMode, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ugagm:FolderArgument.Backup>
+              </ugagm:FolderArgument>
+            </uga:GetNewestEmailConnections.Folder>
+          </uga:GetNewestEmailConnections>
+          <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Mark Email as Read or Unread" sap:VirtualizedContainerService.HintSize="634,235" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAs="Read" UseConnectionService="True" />
+          <uga:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID3}" ManualFolderPath="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowseFolderPath="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Move Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,235" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" UseConnectionService="True">
+            <uga:MoveEmailConnections.Folder>
+              <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
+                <ugagm:FolderArgument.Backup>
+                  <usau:BackupSlot x:TypeArguments="ugage1:FolderInputMode" x:Name="__ReferenceID3" StoredValue="Browse">
+                    <usau:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="ugage1:FolderInputMode, scg:List(x:Object)" />
+                    </usau:BackupSlot.BackupValues>
+                  </usau:BackupSlot>
+                </ugagm:FolderArgument.Backup>
+              </ugagm:FolderArgument>
+            </uga:MoveEmailConnections.Folder>
+          </uga:MoveEmailConnections>
+          <uga:RemoveEmailLabelsConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" ManualEntrySelectedLabels="{x:Null}" SelectedLabels="{x:Null}" AllLabels="W3siSWQiOiJMYWJlbF8zIiwiTmFtZSI6IklOQk9YXC9OYXJlbl9CYWdhdmF0aHkiLCJUeXBlIjoidXNlciJ9LHsiSWQiOiJMYWJlbF80IiwiTmFtZSI6IklOQk9YXC9BcnVuIiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNSIsIk5hbWUiOiJJTkJPWFwvU3VyeWEiLCJUeXBlIjoidXNlciJ9XQ==" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Remove Gmail Labels" sap:VirtualizedContainerService.HintSize="634,236" sap2010:WorkflowViewState.IdRef="RemoveEmailLabelsConnections_1" LabelSelectionMode="MultiSelect" UseConnectionService="True">
+            <uga:RemoveEmailLabelsConnections.SelectedLabelsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:LabelInputMode" StoredValue="MultiSelect">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:LabelInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:RemoveEmailLabelsConnections.SelectedLabelsBackup>
+          </uga:RemoveEmailLabelsConnections>
+          <uga:ReplyToEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Attachments="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" NewSubject="{x:Null}" SingleAttachment="{x:Null}" To="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Reply to Email" sap:VirtualizedContainerService.HintSize="634,437" sap2010:WorkflowViewState.IdRef="ReplyToEmailConnections_1" Importance="Normal" ReplyToAll="False" SaveAsDraft="True" UseConnectionService="True">
+            <uga:ReplyToEmailConnections.AttachmentsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:AttachmentInputMode" StoredValue="UseExisting">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:AttachmentInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:ReplyToEmailConnections.AttachmentsBackup>
+            <uga:ReplyToEmailConnections.Body>
+              <InArgument x:TypeArguments="x:String" />
+            </uga:ReplyToEmailConnections.Body>
+          </uga:ReplyToEmailConnections>
+          <uga:SendEmailConnections ArgumentAttachmentPaths="{x:Null}" ArgumentAttachments="{x:Null}" AttachmentPaths="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ReplyTo="{x:Null}" SingleAttachment="{x:Null}" Subject="{x:Null}" TextBody="{x:Null}" To="{x:Null}" AttachmentInputMode="UseExisting" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Send Email" sap:VirtualizedContainerService.HintSize="634,488" sap2010:WorkflowViewState.IdRef="SendEmailConnections_1" Importance="Normal" InputType="HTML" SaveAsDraft="True" UseConnectionService="True">
+            <uga:SendEmailConnections.Attachments>
+              <InArgument x:TypeArguments="scg:IEnumerable(upr:IResource)" />
+            </uga:SendEmailConnections.Attachments>
+            <uga:SendEmailConnections.AttachmentsBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:AttachmentInputMode" StoredValue="UseExisting">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:AttachmentInputMode, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:SendEmailConnections.AttachmentsBackup>
+            <uga:SendEmailConnections.Body>
+              <InArgument x:TypeArguments="x:String" />
+            </uga:SendEmailConnections.Body>
+            <uga:SendEmailConnections.InputTypeBackup>
+              <usau:BackupSlot x:TypeArguments="ugage1:BodyInputType" StoredValue="HTML">
+                <usau:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="ugage1:BodyInputType, scg:List(x:Object)" />
+                </usau:BackupSlot.BackupValues>
+              </usau:BackupSlot>
+            </uga:SendEmailConnections.InputTypeBackup>
+          </uga:SendEmailConnections>
+          <uga:TurnOffAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn Off Automatic Replies" sap:VirtualizedContainerService.HintSize="634,133" sap2010:WorkflowViewState.IdRef="TurnOffAutomaticRepliesConnections_1" UseConnectionService="True" />
+          <uga:TurnOnAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" EndTime="{x:Null}" MessageSubject="{x:Null}" SendRepliesOutsideOrganization="{x:Null}" SendRepliesToContactsOnly="{x:Null}" StartTime="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn On Automatic Replies" sap:VirtualizedContainerService.HintSize="634,437" sap2010:WorkflowViewState.IdRef="TurnOnAutomaticRepliesConnections_1" UseConnectionService="True">
+            <uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
+              <InArgument x:TypeArguments="x:String" />
+            </uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
+          </uga:TurnOnAutomaticRepliesConnections>
+          <ugagt:NewEmailReceived ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" JobData="{x:Null}" Result="{x:Null}" UiPathEvent="{x:Null}" UiPathEventConnector="{x:Null}" UiPathEventObjectId="{x:Null}" UiPathEventObjectType="{x:Null}" AuthScopesInvalid="False" BrowserFolderId="INBOX" BrowserFolderName="Inbox" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Email Received" FilterExpression="(ParentFolders[?ID=='INBOX'])" sap:VirtualizedContainerService.HintSize="634,255" sap2010:WorkflowViewState.IdRef="NewEmailReceived_1" IncludeAttachments="False" MarkAsRead="False" UseConnectionService="True" WithAttachmentsOnly="False" />
+          <ugagt:EmailSent ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" JobData="{x:Null}" Result="{x:Null}" UiPathEvent="{x:Null}" UiPathEventConnector="{x:Null}" UiPathEventObjectId="{x:Null}" UiPathEventObjectType="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Email Sent" FilterExpression="" sap:VirtualizedContainerService.HintSize="634,204" sap2010:WorkflowViewState.IdRef="EmailSent_1" IncludeAttachments="False" UseConnectionService="True" WithAttachmentsOnly="False" />
+          <uga:ChangeLabels ContinueOnError="{x:Null}" Email="{x:Null}" NewLabelsList="{x:Null}" AuthScopesInvalid="False" DisplayName="Change Labels" sap:VirtualizedContainerService.HintSize="634,137" sap2010:WorkflowViewState.IdRef="ChangeLabels_1">
+            <uga:ChangeLabels.NewLabels>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </uga:ChangeLabels.NewLabels>
+          </uga:ChangeLabels>
+          <uga:GetMailMessages ContinueOnError="{x:Null}" EmailId="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Get Mail Messages" sap:VirtualizedContainerService.HintSize="634,137" sap2010:WorkflowViewState.IdRef="GetMailMessages_1" MarkAsRead="False" MaxResults="30" SearchExpression="from:(a@b.com) subject:(Some Subject) has:attachment">
+            <uga:GetMailMessages.Labels>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </uga:GetMailMessages.Labels>
+          </uga:GetMailMessages>
+          <uga:SendEmail AttachmentList="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" Subject="{x:Null}" To="{x:Null}" AuthScopesInvalid="False" DisplayName="Send Mail Message" sap:VirtualizedContainerService.HintSize="634,370" sap2010:WorkflowViewState.IdRef="SendEmail_1" IsDraft="False" IsHTML="False">
+            <uga:SendEmail.Attachments>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+            </uga:SendEmail.Attachments>
+          </uga:SendEmail>
+          <umaf:CopyItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID4}" ItemIdBackup="{x:Reference __ReferenceID5}" ManualEntryDriveName="{x:Null}" ManualEntryFolderDriveName="{x:Null}" ManualEntryFolderId="{x:Null}" ManualEntryFolderSiteUrl="{x:Null}" ManualEntryFolderUrl="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserFolderDriveId="99694CC8C578BDCF" BrowserFolderDriveName="root" BrowserFolderFriendlyName="OneDrive" BrowserFolderId="99694CC8C578BDCF!sea8cc6beffdb43d7976fbc7da445c639" BrowserFolderSiteUrl="https://onedrive.live.com?cid=99694CC8C578BDCF&amp;id=01FTQWDN56Y2GOVW7725BZO354PWSELRRZ" ConflictResolution="Fail" ConnectionId="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" DisplayName="Copy file or folder" FolderSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,337" sap2010:WorkflowViewState.IdRef="CopyItemConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:CopyItemConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID5" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:CopyItemConnections.DriveItemArgument>
+            <umaf:CopyItemConnections.FolderArgument>
+              <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" BrowserDriveId="99694CC8C578BDCF" BrowserDriveName="root" BrowserItemFriendlyName="OneDrive" BrowserItemId="99694CC8C578BDCF!sea8cc6beffdb43d7976fbc7da445c639" BrowserSiteUrl="https://onedrive.live.com?cid=99694CC8C578BDCF&amp;id=01FTQWDN56Y2GOVW7725BZO354PWSELRRZ" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID4" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:CopyItemConnections.FolderArgument>
+          </umaf:CopyItemConnections>
+          <umaf:CreateFolderConnections BrowserParentItemId="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID6}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewFolderName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowserDriveId="99694CC8C578BDCF" BrowserDriveName="root" BrowserItemFriendlyName="OneDrive" BrowserItemId="99694CC8C578BDCF!sea8cc6beffdb43d7976fbc7da445c639" BrowserSiteUrl="https://onedrive.live.com?cid=99694CC8C578BDCF&amp;id=01FTQWDN56Y2GOVW7725BZO354PWSELRRZ" ConflictResolution="Fail" ConnectionId="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="634,286" sap2010:WorkflowViewState.IdRef="CreateFolderConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:CreateFolderConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" ConnectionDescriptor="{x:Null}" FullPathHint="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" BrowserDriveId="99694CC8C578BDCF" BrowserDriveName="root" BrowserItemFriendlyName="OneDrive" BrowserItemId="99694CC8C578BDCF!sea8cc6beffdb43d7976fbc7da445c639" BrowserSiteUrl="https://onedrive.live.com?cid=99694CC8C578BDCF&amp;id=01FTQWDN56Y2GOVW7725BZO354PWSELRRZ" ConnectionKey="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID6" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:CreateFolderConnections.DriveItemArgument>
+          </umaf:CreateFolderConnections>
+          <umaf:DeleteItemConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID7}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" AuthScopesInvalid="False" ConnectionId="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" DisplayName="Delete file or folder" sap:VirtualizedContainerService.HintSize="634,184" sap2010:WorkflowViewState.IdRef="DeleteItemConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:DeleteItemConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID7" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:DeleteItemConnections.DriveItemArgument>
+          </umaf:DeleteItemConnections>
+          <umaf:DownloadFileConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID8}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" ConvertToPdf="False" DisplayName="Download File" sap:VirtualizedContainerService.HintSize="634,184" sap2010:WorkflowViewState.IdRef="DownloadFileConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:DownloadFileConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID8" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:DownloadFileConnections.DriveItemArgument>
+          </umaf:DownloadFileConnections>
+          <umaf:ForEachFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Filter="{x:Null}" FreeTextFilter="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID9}" Length="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" SimpleSearch="{x:Null}" AuthScopesInvalid="False" DisplayName="For Each file or folder" sap:VirtualizedContainerService.HintSize="634,308" sap2010:WorkflowViewState.IdRef="ForEachFileFolderConnections_1" IncludeSubfolders="False" ItemSelectionMode="Browse" MaxResults="200" SearchMode="UseSimple" TrimDuplicates="False" UseConnectionService="True" WhatToReturn="FilesAndFolders">
+            <umaf:ForEachFileFolderConnections.Body>
+              <ActivityAction x:TypeArguments="umfm:O365DriveRemoteItem, x:Int32">
+                <ActivityAction.Argument1>
+                  <DelegateInArgument x:TypeArguments="umfm:O365DriveRemoteItem" Name="CurrentItem" />
+                </ActivityAction.Argument1>
+                <ActivityAction.Argument2>
+                  <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItemIndex" />
+                </ActivityAction.Argument2>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </umaf:ForEachFileFolderConnections.Body>
+            <umaf:ForEachFileFolderConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID9" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:ForEachFileFolderConnections.DriveItemArgument>
+            <umaf:ForEachFileFolderConnections.FilterSelectionBackup>
+              <usau1:BackupSlot x:TypeArguments="umafe:SearchSelectionMode" StoredValue="UseSimple">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umafe:SearchSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umaf:ForEachFileFolderConnections.FilterSelectionBackup>
+          </umaf:ForEachFileFolderConnections>
+          <umaf:GetFileFolderConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID10}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Get file or folder" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="GetFileFolderConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:GetFileFolderConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID10" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:GetFileFolderConnections.DriveItemArgument>
+          </umaf:GetFileFolderConnections>
+          <umaf:GetFileListConnections BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" BrowserSpecificUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FreeTextFilter="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID11}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Result="{x:Null}" SimpleSearch="{x:Null}" AuthScopesInvalid="False" DisplayName="Get file or folder List" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="GetFileListConnections_1" IncludeSubfolders="False" ItemSelectionMode="Browse" MaxResults="200" SearchMode="UseSimple" TrimDuplicates="False" UseConnectionService="True" WhatToReturn="Files">
+            <umaf:GetFileListConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID11" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:GetFileListConnections.DriveItemArgument>
+            <umaf:GetFileListConnections.FilterSelectionBackup>
+              <usau1:BackupSlot x:TypeArguments="umafe:SearchSelectionMode" StoredValue="UseSimple">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umafe:SearchSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umaf:GetFileListConnections.FilterSelectionBackup>
+          </umaf:GetFileListConnections>
+          <umaf:MoveItemConnections BrowserDriveName="{x:Null}" BrowserFolderDriveName="{x:Null}" BrowserFolderFriendlyName="{x:Null}" BrowserFolderId="{x:Null}" BrowserFolderSiteUrl="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID12}" ItemIdBackup="{x:Reference __ReferenceID13}" ManualEntryDriveName="{x:Null}" ManualEntryFolderDriveName="{x:Null}" ManualEntryFolderId="{x:Null}" ManualEntryFolderSiteUrl="{x:Null}" ManualEntryFolderUrl="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" NewName="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Fail" DisplayName="Move file or folder" FolderSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="634,334" sap2010:WorkflowViewState.IdRef="MoveItemConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:MoveItemConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID13" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:MoveItemConnections.DriveItemArgument>
+            <umaf:MoveItemConnections.FolderArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID12" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:MoveItemConnections.FolderArgument>
+          </umaf:MoveItemConnections>
+          <umaf:ShareItemConnections AccessUrl="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ExpirationDate="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID14}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Message="{x:Null}" Recipients="{x:Null}" SharingLinkPassword="{x:Null}" AuthScopesInvalid="False" DisplayName="Share file or folder" sap:VirtualizedContainerService.HintSize="634,281" sap2010:WorkflowViewState.IdRef="ShareItemConnections_1" ItemSelectionMode="Browse" PermissionType="View" RecipientType="PeopleInOrganization" SendInvitationEmail="True" SignInRequired="False" UseConnectionService="True">
+            <umaf:ShareItemConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID14" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:ShareItemConnections.DriveItemArgument>
+          </umaf:ShareItemConnections>
+          <umaf:UploadFilesConnections AllResults="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" FilesList="{x:Null}" FirstResult="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID15}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Metadata="{x:Null}" MultipleFilesToUpload="{x:Null}" SingleFileToUpload="{x:Null}" AuthScopesInvalid="False" ConflictResolution="Replace" DisplayName="Upload Files" FilesInputMode="MultipleByVariable" sap:VirtualizedContainerService.HintSize="634,232" sap2010:WorkflowViewState.IdRef="UploadFilesConnections_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umaf:UploadFilesConnections.DriveItemArgument>
+              <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">
+                <umafm:DriveItemArgument.ItemIdBackup>
+                  <usau1:BackupSlot x:TypeArguments="umafe:EDriveItemMode" x:Name="__ReferenceID15" StoredValue="Browse">
+                    <usau1:BackupSlot.BackupValues>
+                      <scg:Dictionary x:TypeArguments="umafe:EDriveItemMode, scg:List(x:Object)" />
+                    </usau1:BackupSlot.BackupValues>
+                  </usau1:BackupSlot>
+                </umafm:DriveItemArgument.ItemIdBackup>
+              </umafm:DriveItemArgument>
+            </umaf:UploadFilesConnections.DriveItemArgument>
+            <umaf:UploadFilesConnections.FilesBackup>
+              <usau1:BackupSlot x:TypeArguments="umafe:FilesInputMode" StoredValue="MultipleByVariable">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umafe:FilesInputMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umaf:UploadFilesConnections.FilesBackup>
+          </umaf:UploadFilesConnections>
+          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ClientCertificateSecurePassword="{x:Null}" Host="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" CertificatePasswordInputModeSwitch="Password" ContinueOnError="False" DisplayName="FTP Scope" sap:VirtualizedContainerService.HintSize="634,222" sap2010:WorkflowViewState.IdRef="WithFtpSession_1" PasswordInputModeSwitch="Password">
+            <p:WithFtpSession.Body>
+              <ActivityAction x:TypeArguments="p:IFtpSession">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </p:WithFtpSession.Body>
+          </p:WithFtpSession>
+          <umaft:NewFileCreated BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterExpression="{x:Null}" JobData="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="File Created" sap:VirtualizedContainerService.HintSize="634,252" sap2010:WorkflowViewState.IdRef="NewFileCreated_1" UiPathEvent="[UiPathEvent]" UiPathEventConnector="[UiPathEventConnector]" UiPathEventObjectId="[UiPathEventObjectId]" UiPathEventObjectType="[UiPathEventObjectType]" UseConnectionService="True" />
+          <umaft:FileUpdated BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterExpression="{x:Null}" JobData="{x:Null}" Result="{x:Null}" UiPathEvent="{x:Null}" UiPathEventConnector="{x:Null}" UiPathEventObjectId="{x:Null}" UiPathEventObjectType="{x:Null}" AuthScopesInvalid="False" DisplayName="File Updated" sap:VirtualizedContainerService.HintSize="634,252" sap2010:WorkflowViewState.IdRef="FileUpdated_1" UseConnectionService="True" />
+          <umas:AddListItemConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Add List Item" sap:VirtualizedContainerService.HintSize="634,181" sap2010:WorkflowViewState.IdRef="AddListItemConnections`1_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umas:AddListItemConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID17" />
+            </umas:AddListItemConnections.BrowserListFriendlyName>
+            <umas:AddListItemConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID16" />
+            </umas:AddListItemConnections.BrowserListId>
+            <umas:AddListItemConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID18" />
+            </umas:AddListItemConnections.BrowserSiteUrl>
+            <umas:AddListItemConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID21}" BrowserListFriendlyName="{x:Reference __ReferenceID17}" BrowserListId="{x:Reference __ReferenceID16}" BrowserSiteUrl="{x:Reference __ReferenceID18}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID19}" ManualEntrySiteUrl="{x:Reference __ReferenceID20}" ItemSelectionMode="Browse" />
+            </umas:AddListItemConnections.ListArgument>
+            <umas:AddListItemConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID21" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:AddListItemConnections.ListItemBackup>
+            <umas:AddListItemConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID19" />
+            </umas:AddListItemConnections.ListNameOrId>
+            <umas:AddListItemConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID20" />
+            </umas:AddListItemConnections.SiteUrl>
+            <umas:AddListItemConnections.State>
+              <umas:ActivityState />
+            </umas:AddListItemConnections.State>
+          </umas:AddListItemConnections>
+          <umas:DeleteSharepointListItemsConnections x:TypeArguments="sd:DataTable" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" ItemIds="{x:Null}" ItemIdsList="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Delete List Items" sap:VirtualizedContainerService.HintSize="634,283" sap2010:WorkflowViewState.IdRef="DeleteSharepointListItemsConnections`1_1" ItemIdsInputMode="Existing" ItemSelectionMode="Browse" UseConnectionService="True" WorkById="False">
+            <umas:DeleteSharepointListItemsConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID23" />
+            </umas:DeleteSharepointListItemsConnections.BrowserListFriendlyName>
+            <umas:DeleteSharepointListItemsConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID22" />
+            </umas:DeleteSharepointListItemsConnections.BrowserListId>
+            <umas:DeleteSharepointListItemsConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID24" />
+            </umas:DeleteSharepointListItemsConnections.BrowserSiteUrl>
+            <umas:DeleteSharepointListItemsConnections.ItemIdsInputModeBackup>
+              <usau1:BackupSlot x:TypeArguments="umae:CollectionInputMode" StoredValue="{x:Null}">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umae:CollectionInputMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:DeleteSharepointListItemsConnections.ItemIdsInputModeBackup>
+            <umas:DeleteSharepointListItemsConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID27}" BrowserListFriendlyName="{x:Reference __ReferenceID23}" BrowserListId="{x:Reference __ReferenceID22}" BrowserSiteUrl="{x:Reference __ReferenceID24}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID25}" ManualEntrySiteUrl="{x:Reference __ReferenceID26}" ItemSelectionMode="Browse" />
+            </umas:DeleteSharepointListItemsConnections.ListArgument>
+            <umas:DeleteSharepointListItemsConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID27" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:DeleteSharepointListItemsConnections.ListItemBackup>
+            <umas:DeleteSharepointListItemsConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID25" />
+            </umas:DeleteSharepointListItemsConnections.ListNameOrId>
+            <umas:DeleteSharepointListItemsConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID26" />
+            </umas:DeleteSharepointListItemsConnections.SiteUrl>
+          </umas:DeleteSharepointListItemsConnections>
+          <umas:ForEachListItemConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Filter="{x:Null}" Length="{x:Null}" AuthScopesInvalid="False" DisplayName="For Each List Item" sap:VirtualizedContainerService.HintSize="634,410" sap2010:WorkflowViewState.IdRef="ForEachListItemConnections`1_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umas:ForEachListItemConnections.Body>
+              <ActivityAction x:TypeArguments="sd:DataRow, x:Int32">
+                <ActivityAction.Argument1>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentItem" />
+                </ActivityAction.Argument1>
+                <ActivityAction.Argument2>
+                  <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentItemIndex" />
+                </ActivityAction.Argument2>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </ActivityAction>
+            </umas:ForEachListItemConnections.Body>
+            <umas:ForEachListItemConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID29" />
+            </umas:ForEachListItemConnections.BrowserListFriendlyName>
+            <umas:ForEachListItemConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID28" />
+            </umas:ForEachListItemConnections.BrowserListId>
+            <umas:ForEachListItemConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID30" />
+            </umas:ForEachListItemConnections.BrowserSiteUrl>
+            <umas:ForEachListItemConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID33}" BrowserListFriendlyName="{x:Reference __ReferenceID29}" BrowserListId="{x:Reference __ReferenceID28}" BrowserSiteUrl="{x:Reference __ReferenceID30}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID31}" ManualEntrySiteUrl="{x:Reference __ReferenceID32}" ItemSelectionMode="Browse" />
+            </umas:ForEachListItemConnections.ListArgument>
+            <umas:ForEachListItemConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID33" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:ForEachListItemConnections.ListItemBackup>
+            <umas:ForEachListItemConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID31" />
+            </umas:ForEachListItemConnections.ListNameOrId>
+            <umas:ForEachListItemConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID32" />
+            </umas:ForEachListItemConnections.SiteUrl>
+          </umas:ForEachListItemConnections>
+          <umas:GetListItemsConnections x:TypeArguments="sd:DataTable" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" ItemIds="{x:Null}" ItemIdsList="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Get List Items" sap:VirtualizedContainerService.HintSize="634,283" sap2010:WorkflowViewState.IdRef="GetListItemsConnections`1_1" ItemIdsInputMode="Existing" ItemSelectionMode="Browse" UseConnectionService="True" WorkById="False">
+            <umas:GetListItemsConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID35" />
+            </umas:GetListItemsConnections.BrowserListFriendlyName>
+            <umas:GetListItemsConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID34" />
+            </umas:GetListItemsConnections.BrowserListId>
+            <umas:GetListItemsConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID36" />
+            </umas:GetListItemsConnections.BrowserSiteUrl>
+            <umas:GetListItemsConnections.ItemIdsInputModeBackup>
+              <usau1:BackupSlot x:TypeArguments="umae:CollectionInputMode" StoredValue="{x:Null}">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umae:CollectionInputMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:GetListItemsConnections.ItemIdsInputModeBackup>
+            <umas:GetListItemsConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID39}" BrowserListFriendlyName="{x:Reference __ReferenceID35}" BrowserListId="{x:Reference __ReferenceID34}" BrowserSiteUrl="{x:Reference __ReferenceID36}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID37}" ManualEntrySiteUrl="{x:Reference __ReferenceID38}" ItemSelectionMode="Browse" />
+            </umas:GetListItemsConnections.ListArgument>
+            <umas:GetListItemsConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID39" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:GetListItemsConnections.ListItemBackup>
+            <umas:GetListItemsConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID37" />
+            </umas:GetListItemsConnections.ListNameOrId>
+            <umas:GetListItemsConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID38" />
+            </umas:GetListItemsConnections.SiteUrl>
+          </umas:GetListItemsConnections>
+          <umas:GetSingleSharepointListItemConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" ItemId="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Get Single List Item" sap:VirtualizedContainerService.HintSize="634,283" sap2010:WorkflowViewState.IdRef="GetSingleSharepointListItemConnections`1_1" ItemSelectionMode="Browse" UseConnectionService="True" WorkById="False">
+            <umas:GetSingleSharepointListItemConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID41" />
+            </umas:GetSingleSharepointListItemConnections.BrowserListFriendlyName>
+            <umas:GetSingleSharepointListItemConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID40" />
+            </umas:GetSingleSharepointListItemConnections.BrowserListId>
+            <umas:GetSingleSharepointListItemConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID42" />
+            </umas:GetSingleSharepointListItemConnections.BrowserSiteUrl>
+            <umas:GetSingleSharepointListItemConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID45}" BrowserListFriendlyName="{x:Reference __ReferenceID41}" BrowserListId="{x:Reference __ReferenceID40}" BrowserSiteUrl="{x:Reference __ReferenceID42}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID43}" ManualEntrySiteUrl="{x:Reference __ReferenceID44}" ItemSelectionMode="Browse" />
+            </umas:GetSingleSharepointListItemConnections.ListArgument>
+            <umas:GetSingleSharepointListItemConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID45" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:GetSingleSharepointListItemConnections.ListItemBackup>
+            <umas:GetSingleSharepointListItemConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID43" />
+            </umas:GetSingleSharepointListItemConnections.ListNameOrId>
+            <umas:GetSingleSharepointListItemConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID44" />
+            </umas:GetSingleSharepointListItemConnections.SiteUrl>
+          </umas:GetSingleSharepointListItemConnections>
+          <p:WithFtpSession ClientCertificatePassword="{x:Null}" ClientCertificatePath="{x:Null}" ClientCertificateSecurePassword="{x:Null}" Host="{x:Null}" Password="{x:Null}" Port="{x:Null}" SecurePassword="{x:Null}" Username="{x:Null}" CertificatePasswordInputModeSwitch="Password" ContinueOnError="False" DisplayName="FTP Scope" sap:VirtualizedContainerService.HintSize="634,1196" sap2010:WorkflowViewState.IdRef="WithFtpSession_2" PasswordInputModeSwitch="Password">
+            <p:WithFtpSession.Body>
+              <ActivityAction x:TypeArguments="p:IFtpSession">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="p:IFtpSession" Name="FtpSession" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,1077" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p:Delete RemotePath="{x:Null}" ContinueOnError="False" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="Delete_1" />
+                  <p:DirectoryExists Exists="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" DisplayName="Directory Exists" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="DirectoryExists_1" />
+                  <p:DownloadFiles LocalPath="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" Create="False" DisplayName="Download files" sap:VirtualizedContainerService.HintSize="354,170" sap2010:WorkflowViewState.IdRef="DownloadFiles_1" Overwrite="False" Recursive="False" />
+                  <p:EnumerateObjects Files="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" DisplayName="Enumerate Objects" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="EnumerateObjects_1" Recursive="False" />
+                  <p:FileExists Exists="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" DisplayName="File Exists" sap:VirtualizedContainerService.HintSize="354,122" sap2010:WorkflowViewState.IdRef="FileExists_1" />
+                  <p:MoveItem NewPath="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" DisplayName="Move Item" sap:VirtualizedContainerService.HintSize="354,170" sap2010:WorkflowViewState.IdRef="MoveItem_1" Overwrite="False" />
+                  <p:UploadFiles LocalPath="{x:Null}" RemotePath="{x:Null}" ContinueOnError="False" Create="False" DisplayName="Upload Files" sap:VirtualizedContainerService.HintSize="354,161" sap2010:WorkflowViewState.IdRef="UploadFiles_1" Overwrite="False" Recursive="False" />
+                </Sequence>
+              </ActivityAction>
+            </p:WithFtpSession.Body>
+          </p:WithFtpSession>
+          <umas:UpdateListItemConnections x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" ItemId="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" DisplayName="Update Single List Item" sap:VirtualizedContainerService.HintSize="634,232" sap2010:WorkflowViewState.IdRef="UpdateListItemConnections`1_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umas:UpdateListItemConnections.BrowserListFriendlyName>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID47" />
+            </umas:UpdateListItemConnections.BrowserListFriendlyName>
+            <umas:UpdateListItemConnections.BrowserListId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID46" />
+            </umas:UpdateListItemConnections.BrowserListId>
+            <umas:UpdateListItemConnections.BrowserSiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID48" />
+            </umas:UpdateListItemConnections.BrowserSiteUrl>
+            <umas:UpdateListItemConnections.ListArgument>
+              <umasm:ListArgument Backup="{x:Reference __ReferenceID51}" BrowserListFriendlyName="{x:Reference __ReferenceID47}" BrowserListId="{x:Reference __ReferenceID46}" BrowserSiteUrl="{x:Reference __ReferenceID48}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryListNameOrId="{x:Reference __ReferenceID49}" ManualEntrySiteUrl="{x:Reference __ReferenceID50}" ItemSelectionMode="Browse" />
+            </umas:UpdateListItemConnections.ListArgument>
+            <umas:UpdateListItemConnections.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" x:Name="__ReferenceID51" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umas:UpdateListItemConnections.ListItemBackup>
+            <umas:UpdateListItemConnections.ListNameOrId>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID49" />
+            </umas:UpdateListItemConnections.ListNameOrId>
+            <umas:UpdateListItemConnections.SiteUrl>
+              <InArgument x:TypeArguments="x:String" x:Name="__ReferenceID50" />
+            </umas:UpdateListItemConnections.SiteUrl>
+            <umas:UpdateListItemConnections.State>
+              <umas:ActivityState />
+            </umas:UpdateListItemConnections.State>
+          </umas:UpdateListItemConnections>
+          <umast:SharepointListItemAdded x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" BrowserListFriendlyName="{x:Null}" BrowserListId="{x:Null}" BrowserSiteUrl="{x:Null}" ColumnsToRetrieve="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterExpression="{x:Null}" JobData="{x:Null}" ListNameOrId="{x:Null}" ReferenceId="{x:Null}" Result="{x:Null}" SiteUrl="{x:Null}" UiPathEvent="{x:Null}" UiPathEventConnector="{x:Null}" UiPathEventObjectId="{x:Null}" UiPathEventObjectType="{x:Null}" AuthScopesInvalid="False" DisplayName="List Item Added" sap:VirtualizedContainerService.HintSize="634,253" sap2010:WorkflowViewState.IdRef="SharepointListItemAdded`1_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umast:SharepointListItemAdded.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umast:SharepointListItemAdded.ListItemBackup>
+          </umast:SharepointListItemAdded>
+          <umast:SharepointListItemUpdated x:TypeArguments="sd:DataRow" AllColumns="{x:Null}" BrowserListFriendlyName="{x:Null}" BrowserListId="{x:Null}" BrowserSiteUrl="{x:Null}" ColumnsToRetrieve="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" Filter="{x:Null}" FilterExpression="{x:Null}" JobData="{x:Null}" ListNameOrId="{x:Null}" ReferenceId="{x:Null}" Result="{x:Null}" SiteUrl="{x:Null}" UiPathEvent="{x:Null}" UiPathEventConnector="{x:Null}" UiPathEventObjectId="{x:Null}" UiPathEventObjectType="{x:Null}" AuthScopesInvalid="False" DisplayName="List Item Updated" sap:VirtualizedContainerService.HintSize="634,253" sap2010:WorkflowViewState.IdRef="SharepointListItemUpdated`1_1" ItemSelectionMode="Browse" UseConnectionService="True">
+            <umast:SharepointListItemUpdated.ListItemBackup>
+              <usau1:BackupSlot x:TypeArguments="umase:ItemSelectionMode" StoredValue="Browse">
+                <usau1:BackupSlot.BackupValues>
+                  <scg:Dictionary x:TypeArguments="umase:ItemSelectionMode, scg:List(x:Object)" />
+                </usau1:BackupSlot.BackupValues>
+              </usau1:BackupSlot>
+            </umast:SharepointListItemUpdated.ListItemBackup>
+          </umast:SharepointListItemUpdated>
+          <umaf:UseDriveCard ApplicationId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" TenantId="{x:Null}" Timeout="{x:Null}" Account="Please select an account." Connector="uipath-microsoft-onedrive" DisplayName="Use OneDrive &amp; SharePoint" sap:VirtualizedContainerService.HintSize="634,1787" sap2010:WorkflowViewState.IdRef="UseDriveCard_1" UseConnectionService="False">
+            <umaf:UseDriveCard.Body>
+              <ActivityAction x:TypeArguments="umafc:IDriveMetadata">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="umafc:IDriveMetadata" Name="DriveLocation" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,1615" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <umas1:AddListItems ContinueOnError="{x:Null}" List="{x:Null}" ListItems="{x:Null}" MultipleListItems="{x:Null}" SingleListItem="{x:Null}" AuthScopesInvalid="False" DisplayName="Add List Items" sap:VirtualizedContainerService.HintSize="450,243" sap2010:WorkflowViewState.IdRef="AddListItems_2" />
+                  <umas1:DeleteListItem ContinueOnError="{x:Null}" ListItem="{x:Null}" AuthScopesInvalid="False" DisplayName="Delete List Item" sap:VirtualizedContainerService.HintSize="450,121" sap2010:WorkflowViewState.IdRef="DeleteListItem_2" />
+                  <umas1:ForEachList CurrentIndex="{x:Null}" Filter="{x:Null}" SiteUrlOrId="{x:Null}" DisplayName="For Each List" sap:VirtualizedContainerService.HintSize="450,283" sap2010:WorkflowViewState.IdRef="ForEachList_2" IncludeColumnsDefinitions="False">
+                    <umas1:ForEachList.Body>
+                      <ActivityAction x:TypeArguments="umm:Office365SharepointList, x:Int32">
+                        <ActivityAction.Argument1>
+                          <DelegateInArgument x:TypeArguments="umm:Office365SharepointList" Name="List" />
+                        </ActivityAction.Argument1>
+                        <ActivityAction.Argument2>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="ListIndex" />
+                        </ActivityAction.Argument2>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </ActivityAction>
+                    </umas1:ForEachList.Body>
+                  </umas1:ForEachList>
+                  <umas1:ForEachListItem CurrentIndex="{x:Null}" Filter="{x:Null}" List="{x:Null}" DisplayName="For Each List Item" sap:VirtualizedContainerService.HintSize="450,309" sap2010:WorkflowViewState.IdRef="ForEachListItem_2">
+                    <umas1:ForEachListItem.Body>
+                      <ActivityAction x:TypeArguments="umm:Office365SharepointListItem, x:Int32">
+                        <ActivityAction.Argument1>
+                          <DelegateInArgument x:TypeArguments="umm:Office365SharepointListItem" Name="ListItem" />
+                        </ActivityAction.Argument1>
+                        <ActivityAction.Argument2>
+                          <DelegateInArgument x:TypeArguments="x:Int32" Name="ListItemIndex" />
+                        </ActivityAction.Argument2>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </ActivityAction>
+                    </umas1:ForEachListItem.Body>
+                  </umas1:ForEachListItem>
+                  <umas1:GetListInfo ContinueOnError="{x:Null}" List="{x:Null}" ListTitleOrId="{x:Null}" SiteUrlOrId="{x:Null}" AuthScopesInvalid="False" DisplayName="Get List Info" sap:VirtualizedContainerService.HintSize="450,217" sap2010:WorkflowViewState.IdRef="GetListInfo_2" IncludeColumnsDefinitions="False" />
+                  <umas1:GetListItems ContinueOnError="{x:Null}" AuthScopesInvalid="False" DisplayName="Get List Items" sap:VirtualizedContainerService.HintSize="450,242" sap2010:WorkflowViewState.IdRef="GetListItems_1" />
+                  <umas1:UpdateListItem ContinueOnError="{x:Null}" ListItem="{x:Null}" AuthScopesInvalid="False" DisplayName="Update List Item" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="UpdateListItem_1" />
+                </Sequence>
+              </ActivityAction>
+            </umaf:UseDriveCard.Body>
+            <umaf:UseDriveCard.EmailAddress>
+              <InArgument x:TypeArguments="x:String">
+                <Literal x:TypeArguments="x:String" Value="" />
+              </InArgument>
+            </umaf:UseDriveCard.EmailAddress>
+          </umaf:UseDriveCard>
+          <ui:GetRowItem Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="{x:Null}" Row="{x:Null}" Value="{x:Null}" DisplayName="Get Row Item" sap:VirtualizedContainerService.HintSize="634,219" sap2010:WorkflowViewState.IdRef="GetRowItem_1" />
+          <ui:GetRobotAsset AssetName="{x:Null}" TimeoutMS="{x:Null}" CacheStrategy="None" DisplayName="Get Asset" sap:VirtualizedContainerService.HintSize="634,173" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[GetAsset]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <ui:ReadPDFText FileName="{x:Null}" PreserveFormatting="{x:Null}" Text="{x:Null}" DisplayName="Read PDF Text" sap:VirtualizedContainerService.HintSize="634,114" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" />
+          <ui:ReadPDFWithOCR FileName="{x:Null}" Text="{x:Null}" DegreeOfParallelism="-1" DisplayName="Read PDF With OCR" sap:VirtualizedContainerService.HintSize="634,216" sap2010:WorkflowViewState.IdRef="ReadPDFWithOCR_1" ImageDpi="150" Range="All">
+            <ui:ReadPDFWithOCR.OCREngine>
+              <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                <ActivityFunc.Argument>
+                  <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                </ActivityFunc.Argument>
+              </ActivityFunc>
+            </ui:ReadPDFWithOCR.OCREngine>
+          </ui:ReadPDFWithOCR>
+          <upap:ManagePDFPassword FileName="{x:Null}" OutputFileName="{x:Null}" DisplayName="Manage PDF Password" sap:VirtualizedContainerService.HintSize="634,167" sap2010:WorkflowViewState.IdRef="ManagePDFPassword_1" />
+          <upap:JoinPDF FileList="{x:Null}" OutputFileName="{x:Null}" DisplayName="Join PDF Files" sap:VirtualizedContainerService.HintSize="634,114" sap2010:WorkflowViewState.IdRef="JoinPDF_1" />
+          <upap:GetPDFPageCount FileName="{x:Null}" PageCount="{x:Null}" DisplayName="Get PDF Page Count" sap:VirtualizedContainerService.HintSize="634,114" sap2010:WorkflowViewState.IdRef="GetPDFPageCount_1" />
+          <upap:ExtractPDFPageRange FileName="{x:Null}" OutputFileName="{x:Null}" Range="{x:Null}" DisplayName="Extract PDF Page Range" sap:VirtualizedContainerService.HintSize="634,167" sap2010:WorkflowViewState.IdRef="ExtractPDFPageRange_1" />
+          <upap:ExtractImagesFromPDF FileName="{x:Null}" OutputFolderName="{x:Null}" DisplayName="Extract Images From PDF" sap:VirtualizedContainerService.HintSize="634,114" sap2010:WorkflowViewState.IdRef="ExtractImagesFromPDF_1" />
+          <upap:ExportPDFPageAsImage FileName="{x:Null}" OutputFileName="{x:Null}" PageNumber="{x:Null}" DisplayName="Export PDF Page As Image" sap:VirtualizedContainerService.HintSize="634,167" sap2010:WorkflowViewState.IdRef="ExportPDFPageAsImage_1" ImageDpi="150" />
+          <Flowchart sap:VirtualizedContainerService.HintSize="634,657" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <av:Point x:Key="ShapeLocation">275,35</av:Point>
+                <av:Size x:Key="ShapeSize">50,50</av:Size>
+                <av:PointCollection x:Key="ConnectorLocation">300,85 299.5,85 299.5,110</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Flowchart.StartNode>
+              <x:Reference>__ReferenceID53</x:Reference>
+            </Flowchart.StartNode>
+            <FlowDecision x:Name="__ReferenceID53" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <av:Point x:Key="ShapeLocation">270,110</av:Point>
+                  <av:Size x:Key="ShapeSize">59,59</av:Size>
+                  <av:PointCollection x:Key="TrueConnector">299.5,169 299.5,199.00000000000003 289.5,199.00000000000003 289.5,240</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <FlowDecision.True>
+                <FlowSwitch x:TypeArguments="x:Int32" x:Name="__ReferenceID52" DisplayName="Flow Switch" sap:VirtualizedContainerService.HintSize="59,59" sap2010:WorkflowViewState.IdRef="FlowSwitch`1_1">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">260,240</av:Point>
+                      <av:Size x:Key="ShapeSize">59,59</av:Size>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </FlowSwitch>
+              </FlowDecision.True>
+            </FlowDecision>
+            <x:Reference>__ReferenceID52</x:Reference>
+          </Flowchart>
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="634,2242" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="dca4d2cf-3791-4274-b0e8-d0bed6c9adf2" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2035" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Sequence sap:VirtualizedContainerService.HintSize="450,1945" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,257" sap2010:WorkflowViewState.IdRef="NTypeInto_1" Version="V3" />
+                    <uix:NClick ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="388,196" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" Version="V3" />
+                    <uix:NGetText DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="388,196" sap2010:WorkflowViewState.IdRef="NGetText_1" Version="V3" />
+                    <uix:NGetAttribute Attribute="{x:Null}" Result="{x:Null}" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="388,246" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" Version="V3" />
+                    <ui:FindChildren Children="{x:Null}" DisplayName="Find Children 'menu item  User Events'" Filter="&lt;ctrl /&gt;" sap:VirtualizedContainerService.HintSize="388,139" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                      <ui:FindChildren.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b53ee67f-e923-4462-840e-5942e2048c74" InformativeScreenshot="7e63145c07754633c8a21d8b60224ff2" Selector="&lt;wnd app='uipath.studio.exe' cls='HwndWrapper*' title='UiADP_AUtomate_With_Rakesh - UiPath Studio' /&gt;&lt;ctrl automationid='ExportedIcons/UserEventsIcon' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:FindChildren.Target>
+                    </ui:FindChildren>
+                    <ui:FindOCRText Element="{x:Null}" Text="{x:Null}" DisplayName="Find OCR Text Position" sap:VirtualizedContainerService.HintSize="388,277" sap2010:WorkflowViewState.IdRef="FindOCRText_1" Occurrence="1">
+                      <ui:FindOCRText.OCREngine>
+                        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                          <ActivityFunc.Argument>
+                            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                          </ActivityFunc.Argument>
+                          <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_2" Image="[Image]" />
+                        </ActivityFunc>
+                      </ui:FindOCRText.OCREngine>
+                      <ui:FindOCRText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="a7626fd4-c206-4c13-bdee-0e736fc35dfb">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:FindOCRText.Target>
+                    </ui:FindOCRText>
+                    <ui:GetOCRText Text="{x:Null}" WordsInfo="{x:Null}" DisplayName="Get OCR Text" sap:VirtualizedContainerService.HintSize="388,184" sap2010:WorkflowViewState.IdRef="GetOCRText_1">
+                      <ui:GetOCRText.OCREngine>
+                        <ActivityFunc x:TypeArguments="sd1:Image, scg:IEnumerable(scg:KeyValuePair(sd2:Rectangle, x:String))">
+                          <ActivityFunc.Argument>
+                            <DelegateInArgument x:TypeArguments="sd1:Image" Name="Image" />
+                          </ActivityFunc.Argument>
+                          <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="200,25" sap2010:WorkflowViewState.IdRef="GoogleOCR_1" Image="[Image]" />
+                        </ActivityFunc>
+                      </ui:GetOCRText.OCREngine>
+                      <ui:GetOCRText.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="817a421f-aef9-474e-bbfd-9bf587393921">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:GetOCRText.Target>
+                    </ui:GetOCRText>
+                    <ui:GoogleCloudOCR ApiKey="{x:Null}" FilterRegion="{x:Null}" Image="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DetectionMode="TextDetection" DisplayName="Google Cloud Vision OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="GoogleCloudOCR_1" ResizeToApiLimits="False" />
+                    <ui:MicrosoftAzureComputerVisionOCR ApiKey="{x:Null}" Endpoint="{x:Null}" FilterRegion="{x:Null}" Image="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Microsoft Azure Computer Vision OCR" ExtractWords="False" HandwritingRecognition="False" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="MicrosoftAzureComputerVisionOCR_1" />
+                    <p1:CjkOCR Endpoint="{x:Null}" Image="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" ApiKey="[Nothing]" ComputeSkewAngle="False" DisplayName="OCR - Japanese, Chinese, Korean" ExtractWords="True" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="CjkOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
+                    <ui:GoogleOCR AllowedCharacters="{x:Null}" DeniedCharacters="{x:Null}" FilterRegion="{x:Null}" Image="{x:Null}" Invert="{x:Null}" Language="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" ComputeSkewAngle="False" DisplayName="Tesseract OCR" ExtractWords="False" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="GoogleOCR_3" />
+                    <p1:UiPathDocumentOCR Endpoint="{x:Null}" Image="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseLocalServer="{x:Null}" ApiKey="[Nothing]" ComputeSkewAngle="False" DisplayName="UiPath Document OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="388,57" sap2010:WorkflowViewState.IdRef="UiPathDocumentOCR_1" Language="auto" NoopExecution="False" Profile="None" Scale="1" Timeout="100000" />
+                    <p1:UiPathScreenOCR ApiKey="{x:Null}" Endpoint="{x:Null}" Image="{x:Null}" Output="{x:Null}" PredictionId="{x:Null}" Text="{x:Null}" UseAccents="{x:Null}" UseLocalServer="{x:Null}" ComputeSkewAngle="False" DisplayName="UiPath Screen OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="388,50" sap2010:WorkflowViewState.IdRef="UiPathScreenOCR_1" Language="auto" NoopExecution="False" Profile="Screen" Scale="1" Timeout="100000" />
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="0, 0, 0, 0" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <ui:HttpClient Body="{x:Null}" ClientCertificate="{x:Null}" ClientCertificatePassword="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" EndPoint="{x:Null}" FileAttachments="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseAttachment="{x:Null}" ResponseHeaders="{x:Null}" Result="{x:Null}" SecureClientCertificatePassword="{x:Null}" SecurePassword="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="ANY" AuthenticationType="None" BodyFormat="application/xml" DisplayName="HTTP Request" EnableSSLVerification="True" sap:VirtualizedContainerService.HintSize="634,102" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" TimeoutMS="6000">
+            <ui:HttpClient.Attachments>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Attachments>
+            <ui:HttpClient.Cookies>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Cookies>
+            <ui:HttpClient.Headers>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Headers>
+            <ui:HttpClient.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.Parameters>
+            <ui:HttpClient.UrlSegments>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </ui:HttpClient.UrlSegments>
+          </ui:HttpClient>
+          <ui:BulkInsert AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" DisplayName="Bulk insert" sap:VirtualizedContainerService.HintSize="634,193" sap2010:WorkflowViewState.IdRef="BulkInsert_1" />
+          <ui:BulkUpdate AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" DisplayName="Bulk update" sap:VirtualizedContainerService.HintSize="634,241" sap2010:WorkflowViewState.IdRef="BulkUpdate_1" />
+          <ui:DatabaseConnect DisplayName="Connect to database" sap:VirtualizedContainerService.HintSize="634,92" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" DatabaseConnection="{x:Null}" />
+          <ui:DatabaseDisconnect DatabaseConnection="{x:Null}" DisplayName="Disconnect from database" sap:VirtualizedContainerService.HintSize="634,57" sap2010:WorkflowViewState.IdRef="DatabaseDisconnect_1" />
+          <ui:InsertDataTable AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" DisplayName="Insert" sap:VirtualizedContainerService.HintSize="634,148" sap2010:WorkflowViewState.IdRef="InsertDataTable_1" />
+          <ui:ExecuteNonQuery AffectedRecords="{x:Null}" ContinueOnError="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Run command" sap:VirtualizedContainerService.HintSize="634,121" sap2010:WorkflowViewState.IdRef="ExecuteNonQuery_1">
+            <ui:ExecuteNonQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteNonQuery.Parameters>
+          </ui:ExecuteNonQuery>
+          <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" Sql="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Run query" sap:VirtualizedContainerService.HintSize="634,121" sap2010:WorkflowViewState.IdRef="ExecuteQuery_1">
+            <ui:ExecuteQuery.Parameters>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:ExecuteQuery.Parameters>
+          </ui:ExecuteQuery>
+          <ui:DatabaseTransaction ContinueOnError="{x:Null}" DatabaseConnection="{x:Null}" DisplayName="Start Transaction" sap:VirtualizedContainerService.HintSize="634,245" sap2010:WorkflowViewState.IdRef="DatabaseTransaction_1" UseTransaction="True">
+            <ui:DatabaseTransaction.Body>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </Sequence>
+            </ui:DatabaseTransaction.Body>
+          </ui:DatabaseTransaction>
+          <StateMachine InitialState="{x:Reference __ReferenceID56}" DisplayName="State Machine" sap:VirtualizedContainerService.HintSize="634,660" sap2010:WorkflowViewState.IdRef="StateMachine_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+                <x:Double x:Key="StateContainerWidth">600</x:Double>
+                <x:Double x:Key="StateContainerHeight">600</x:Double>
+                <av:PointCollection x:Key="ConnectorLocation">273,77.5 273,107.5 126.7,107.5 126.7,169</av:PointCollection>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <State x:Name="__ReferenceID56" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">53,169</av:Point>
+                  <av:Size x:Key="ShapeSize">134,62</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <State.Transitions>
+                <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">126.7,231 126.7,261 66.7,261 66.7,371 160,371 160,341</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">39</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID54" DisplayName="State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">93,279</av:Point>
+                          <av:Size x:Key="ShapeSize">134,62</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <State.Transitions>
+                        <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:PointCollection x:Key="ConnectorLocation">227,319.3 253.5,319.3 253.5,249 193.5,249 193.5,279</av:PointCollection>
+                              <x:Int32 x:Key="SrcConnectionPointIndex">48</x:Int32>
+                              <x:Int32 x:Key="DestConnectionPointIndex">58</x:Int32>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Transition.To>
+                            <x:Reference>__ReferenceID54</x:Reference>
+                          </Transition.To>
+                        </Transition>
+                      </State.Transitions>
+                    </State>
+                  </Transition.To>
+                </Transition>
+                <Transition DisplayName="T3" sap2010:WorkflowViewState.IdRef="Transition_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <av:PointCollection x:Key="ConnectorLocation">187,209.3 217,209.3 217,160.7 373,160.7</av:PointCollection>
+                      <x:Int32 x:Key="SrcConnectionPointIndex">48</x:Int32>
+                      <x:Int32 x:Key="DestConnectionPointIndex">25</x:Int32>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Transition.To>
+                    <State x:Name="__ReferenceID55" DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_2" IsFinal="True">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">373,139</av:Point>
+                          <av:Size x:Key="ShapeSize">134,62</av:Size>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </State>
+                  </Transition.To>
+                </Transition>
+              </State.Transitions>
+            </State>
+            <x:Reference>__ReferenceID55</x:Reference>
+            <x:Reference>__ReferenceID54</x:Reference>
+            <State DisplayName="Final State" sap:VirtualizedContainerService.HintSize="134,62" sap2010:WorkflowViewState.IdRef="State_4" IsFinal="True">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">393,309</av:Point>
+                  <av:Size x:Key="ShapeSize">134,62</av:Size>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </State>
+          </StateMachine>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+  </Sequence>
+</Activity>
