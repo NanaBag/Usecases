@@ -226,7 +226,7 @@
       <AssemblyReference>UiPath.Testing</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="986,33021" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="986,33061" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Invoices" />
     </Sequence.Variables>
@@ -605,9 +605,9 @@
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoiceData">[dt_Invoices]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,21274" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,21314" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634,21172" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634,21212" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="GetAsset" />
           </Sequence.Variables>
@@ -759,7 +759,7 @@
             </uga:SendEmailConnections.InputTypeBackup>
           </uga:SendEmailConnections>
           <uga:TurnOffAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn Off Automatic Replies" sap:VirtualizedContainerService.HintSize="600,144" sap2010:WorkflowViewState.IdRef="TurnOffAutomaticRepliesConnections_1" UseConnectionService="True" />
-          <uga:TurnOnAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" EndTime="{x:Null}" MessageSubject="{x:Null}" SendRepliesOutsideOrganization="{x:Null}" SendRepliesToContactsOnly="{x:Null}" StartTime="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn On Automatic Replies" sap:VirtualizedContainerService.HintSize="600,448" sap2010:WorkflowViewState.IdRef="TurnOnAutomaticRepliesConnections_1" UseConnectionService="True">
+          <uga:TurnOnAutomaticRepliesConnections ConnectionAccountName="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" ContinueOnError="{x:Null}" DisplayName="Turn On Automatic Replies" EndTime="{x:Null}" sap:VirtualizedContainerService.HintSize="600,448" sap2010:WorkflowViewState.IdRef="TurnOnAutomaticRepliesConnections_1" MessageSubject="{x:Null}" SendRepliesOutsideOrganization="{x:Null}" SendRepliesToContactsOnly="{x:Null}" StartTime="{x:Null}" UseConnectionService="True">
             <uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
               <InArgument x:TypeArguments="x:String" />
             </uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
@@ -1229,13 +1229,13 @@
               </usau1:BackupSlot>
             </umast:SharepointListItemUpdated.ListItemBackup>
           </umast:SharepointListItemUpdated>
-          <umaf:UseDriveCard ApplicationId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" TenantId="{x:Null}" Timeout="{x:Null}" Account="Please select an account." Connector="uipath-microsoft-onedrive" DisplayName="Use OneDrive &amp; SharePoint" sap:VirtualizedContainerService.HintSize="600,1731" sap2010:WorkflowViewState.IdRef="UseDriveCard_1" UseConnectionService="False">
+          <umaf:UseDriveCard ApplicationId="{x:Null}" ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" ContinueOnError="{x:Null}" TenantId="{x:Null}" Timeout="{x:Null}" Account="Please select an account." Connector="uipath-microsoft-onedrive" DisplayName="Use OneDrive &amp; SharePoint" sap:VirtualizedContainerService.HintSize="600,1771" sap2010:WorkflowViewState.IdRef="UseDriveCard_1" UseConnectionService="False">
             <umaf:UseDriveCard.Body>
               <ActivityAction x:TypeArguments="umafc:IDriveMetadata">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="umafc:IDriveMetadata" Name="DriveLocation" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1559" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="518,1599" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1243,7 +1243,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <umas1:AddListItems ContinueOnError="{x:Null}" List="{x:Null}" ListItems="{x:Null}" MultipleListItems="{x:Null}" SingleListItem="{x:Null}" AuthScopesInvalid="False" DisplayName="Add List Items" sap:VirtualizedContainerService.HintSize="484,243" sap2010:WorkflowViewState.IdRef="AddListItems_2" />
                   <umas1:DeleteListItem ContinueOnError="{x:Null}" ListItem="{x:Null}" AuthScopesInvalid="False" DisplayName="Delete List Item" sap:VirtualizedContainerService.HintSize="484,121" sap2010:WorkflowViewState.IdRef="DeleteListItem_2" />
-                  <umas1:ForEachList CurrentIndex="{x:Null}" Filter="{x:Null}" SiteUrlOrId="{x:Null}" DisplayName="For Each List" sap:VirtualizedContainerService.HintSize="484,269" sap2010:WorkflowViewState.IdRef="ForEachList_2" IncludeColumnsDefinitions="False">
+                  <umas1:ForEachList CurrentIndex="{x:Null}" Filter="{x:Null}" SiteUrlOrId="{x:Null}" DisplayName="For Each List" sap:VirtualizedContainerService.HintSize="484,309" sap2010:WorkflowViewState.IdRef="ForEachList_2" IncludeColumnsDefinitions="False">
                     <umas1:ForEachList.Body>
                       <ActivityAction x:TypeArguments="umm:Office365SharepointList, x:Int32">
                         <ActivityAction.Argument1>
