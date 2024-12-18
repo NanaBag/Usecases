@@ -34,6 +34,7 @@
       <x:String>UiPath.DataTableUtilities</x:String>
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Linq.Expressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,7 +103,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Split the 100 Excel Rows Into 10 Rows And Write Into Different Sheets In The Same Excel File" DisplayName="Boundaryless_Mukesh_Kala_Split_100_Excel_Rows_Into_10_Rows_Write_Into_Different_Sheets_In_Same_Excel_File" sap:VirtualizedContainerService.HintSize="684,994" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Split the 100 Excel Rows Into 10 Rows And Write Into Different Sheets In The Same Excel File" DisplayName="Boundaryless_Mukesh_Kala_Split_100_Excel_Rows_Into_10_Rows_Write_Into_Different_Sheets_In_Same_Excel_File" sap:VirtualizedContainerService.HintSize="986,818" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_100Rows" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Split" />
@@ -113,13 +114,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="622,852" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="Resources\SampleExcel.xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" SensitivityLabel="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="520,764" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" SensitivityOperation="None" WorkbookPath="Resources\SampleExcel.xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="485,742" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="486,631" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:List(sd:DataTable)" Name="list_SplitDTs" />
             </Sequence.Variables>
@@ -128,14 +129,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_100Rows]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="423,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt_100Rows]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="452,92" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
               <ui:ExcelReadRange.Range>
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
               </ui:ExcelReadRange.Range>
             </ui:ExcelReadRange>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423,101" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="452,133" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
               <ui:MultipleAssign.AssignOperations>
                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -149,19 +150,19 @@
                 </scg:List>
               </ui:MultipleAssign.AssignOperations>
             </ui:MultipleAssign>
-            <ui:ForEach x:TypeArguments="sd:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="423,390" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_SplitDTs]">
+            <ui:ForEach x:TypeArguments="sd:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="452,346" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[list_SplitDTs]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="sd:DataTable">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataTable" Name="splitDt" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,204" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,199" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:WriteRange AddHeaders="True" DataTable="[dt_Split]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[&quot;Sheet&quot; + (list_SplitDTs.IndexOf(splitDt) + 1).ToString()]" StartingCell="A1" WorkbookPath="Resources\SplitRowsExcel.xlsx" />
+                    <ui:WriteRange AddHeaders="True" DataTable="[splitDt]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="382,139" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[&quot;Sheet&quot; + (list_SplitDTs.IndexOf(splitDt) + 1).ToString()]" StartingCell="A1" WorkbookPath="Resources\SplitRowsExcel.xlsx" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
