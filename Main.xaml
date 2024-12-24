@@ -143,6 +143,82 @@
       <x:String>UiPath.Testing.Activities</x:String>
       <x:String>UiPath.Testing.Core</x:String>
       <x:String>UiPath.Testing.Activities.TestDataQueues.Enums</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Microsoft.Win32.SafeHandles</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.Net</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Configuration.Assemblies</x:String>
+      <x:String>System.CodeDom.Compiler</x:String>
+      <x:String>System.Buffers</x:String>
+      <x:String>System.Buffers.Text</x:String>
+      <x:String>System.Buffers.Binary</x:String>
+      <x:String>System.Threading</x:String>
+      <x:String>System.Threading.Tasks</x:String>
+      <x:String>System.Threading.Tasks.Sources</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Text.Unicode</x:String>
+      <x:String>System.Security.Principal</x:String>
+      <x:String>System.Security.Permissions</x:String>
+      <x:String>System.Security.Cryptography</x:String>
+      <x:String>System.Runtime</x:String>
+      <x:String>System.Runtime.Remoting</x:String>
+      <x:String>System.Runtime.ExceptionServices</x:String>
+      <x:String>System.Runtime.ConstrainedExecution</x:String>
+      <x:String>System.Runtime.Versioning</x:String>
+      <x:String>System.Runtime.Loader</x:String>
+      <x:String>System.Runtime.Intrinsics</x:String>
+      <x:String>System.Runtime.Intrinsics.Wasm</x:String>
+      <x:String>System.Runtime.Intrinsics.Arm</x:String>
+      <x:String>System.Runtime.Intrinsics.X86</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Runtime.InteropServices.ObjectiveC</x:String>
+      <x:String>System.Runtime.InteropServices.Marshalling</x:String>
+      <x:String>System.Runtime.InteropServices.ComTypes</x:String>
+      <x:String>System.Runtime.CompilerServices</x:String>
+      <x:String>System.Resources</x:String>
+      <x:String>System.Reflection.Metadata</x:String>
+      <x:String>System.Reflection.Emit</x:String>
+      <x:String>System.IO.Enumeration</x:String>
+      <x:String>System.Diagnostics.SymbolStore</x:String>
+      <x:String>System.Diagnostics.Contracts</x:String>
+      <x:String>System.Diagnostics.CodeAnalysis</x:String>
+      <x:String>System.Diagnostics.Tracing</x:String>
+      <x:String>System.Collections.Concurrent</x:String>
+      <x:String>Internal</x:String>
+      <x:String>System.CodeDom</x:String>
+      <x:String>Microsoft.CSharp</x:String>
+      <x:String>System.Linq.Expressions.Interpreter</x:String>
+      <x:String>UiPath.Workflow.Runtime</x:String>
+      <x:String>System.Activities.Tracking</x:String>
+      <x:String>System.Activities.Statements.Tracking</x:String>
+      <x:String>System.Activities.Runtime</x:String>
+      <x:String>System.Activities.Runtime.DurableInstancing</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Activities.ParallelTracking</x:String>
+      <x:String>System.Activities.Hosting</x:String>
+      <x:String>System.Activities.Persistence</x:String>
+      <x:String>System.Activities.DurableInstancing</x:String>
+      <x:String>System.ComponentModel.Design.Serialization</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>System.Security.Authentication.ExtendedProtection</x:String>
+      <x:String>System.Timers</x:String>
+      <x:String>System.ComponentModel.Design</x:String>
+      <x:String>System.Xml.Schema</x:String>
+      <x:String>System.Xml.Xsl</x:String>
+      <x:String>System.Xml.Xsl.Runtime</x:String>
+      <x:String>System.Xml.XPath</x:String>
+      <x:String>System.Xml.Resolvers</x:String>
+      <x:String>Microsoft.CodeAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.FlowAnalysis</x:String>
+      <x:String>Microsoft.CodeAnalysis.Text</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics</x:String>
+      <x:String>Microsoft.CodeAnalysis.Diagnostics.Telemetry</x:String>
+      <x:String>Microsoft.CodeAnalysis.Operations</x:String>
+      <x:String>Microsoft.CodeAnalysis.Emit</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic</x:String>
+      <x:String>Microsoft.CodeAnalysis.VisualBasic.Syntax</x:String>
+      <x:String>Microsoft.VisualBasic.FileIO</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -224,33 +300,104 @@
       <AssemblyReference>System.Collections.Specialized</AssemblyReference>
       <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Testing</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>System.IO.Pipes</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography</AssemblyReference>
+      <AssemblyReference>System.Security.Principal.Windows</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.Process</AssemblyReference>
+      <AssemblyReference>System.IO.MemoryMappedFiles</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Registry</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Net.Primitives</AssemblyReference>
+      <AssemblyReference>System.Net.HttpListener</AssemblyReference>
+      <AssemblyReference>System.Net.WebProxy</AssemblyReference>
+      <AssemblyReference>System.Net.NameResolution</AssemblyReference>
+      <AssemblyReference>System.Net.WebClient</AssemblyReference>
+      <AssemblyReference>System.Net.Requests</AssemblyReference>
+      <AssemblyReference>System.Net.ServicePoint</AssemblyReference>
+      <AssemblyReference>System.Net.WebHeaderCollection</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Threading.AccessControl</AssemblyReference>
+      <AssemblyReference>System.Threading</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.MLServices.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Threading.Tasks.Parallel</AssemblyReference>
+      <AssemblyReference>System.Text.Encoding.CodePages</AssemblyReference>
+      <AssemblyReference>System.Text.Encodings.Web</AssemblyReference>
+      <AssemblyReference>System.Security.Claims</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.Pkcs</AssemblyReference>
+      <AssemblyReference>System.Security.Cryptography.ProtectedData</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.CompilerServices.VisualC</AssemblyReference>
+      <AssemblyReference>System.Windows.Forms</AssemblyReference>
+      <AssemblyReference>System.Resources.Writer</AssemblyReference>
+      <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
+      <AssemblyReference>Microsoft.PowerShell.Commands.Diagnostics</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.FileVersionInfo</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.DiagnosticSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TraceSource</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.EventLog</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.PerformanceCounter</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.TextWriterTraceListener</AssemblyReference>
+      <AssemblyReference>System.Diagnostics.StackTrace</AssemblyReference>
+      <AssemblyReference>System.Collections.Concurrent</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
+      <AssemblyReference>System.Net.Security</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Private.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xml.XPath.XDocument</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.CodeAnalysis.CSharp</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="986,33061" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="986,33350" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Invoices" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="email">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:String x:Key="SourceIdRef">DownloadEmailConnections_1</x:String>
+            <x:String x:Key="SourcePropertyName">Result</x:String>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,6158" sap2010:WorkflowViewState.IdRef="CommentOut_6">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,6223" sap2010:WorkflowViewState.IdRef="CommentOut_6">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="908,6047" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="908,6112" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence sap:VirtualizedContainerService.HintSize="874,5987" sap2010:WorkflowViewState.IdRef="Sequence_27">
+          <Sequence sap:VirtualizedContainerService.HintSize="874,6052" sap2010:WorkflowViewState.IdRef="Sequence_27">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:WaitQueueItem PollTimeMS="{x:Null}" QueueName="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Wait Queue Item" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="840,112" sap2010:WorkflowViewState.IdRef="WaitQueueItem_1" />
-            <ui:AddQueueItem QueueType="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="840,224" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal">
+            <ui:WaitQueueItem PollTimeMS="{x:Null}" QueueName="{x:Null}" Reference="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Wait Queue Item" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="840,175" sap2010:WorkflowViewState.IdRef="WaitQueueItem_1" />
+            <ui:AddQueueItem QueueType="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="840,226" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal">
               <ui:AddQueueItem.ItemInformation>
                 <scg:Dictionary x:TypeArguments="x:String, InArgument" />
               </ui:AddQueueItem.ItemInformation>
@@ -302,7 +449,7 @@
                   <uta:DeleteTestDataQueueItems ContinueOnError="{x:Null}" TestDataQueueItems="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Delete Test Data Queue Items" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="DeleteTestDataQueueItems_1" />
                   <uta:GetTestDataQueueItem ContinueOnError="{x:Null}" Output="{x:Null}" QueueName="{x:Null}" TimeoutMs="{x:Null}" DisplayName="Get Test Data Queue Item" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="GetTestDataQueueItem_1" MarkConsumed="True" />
                   <uta:GetTestDataQueueItems ContinueOnError="{x:Null}" IdFilter="{x:Null}" QueueName="{x:Null}" Skip="{x:Null}" TestDataQueueItems="{x:Null}" TimeoutMs="{x:Null}" Top="{x:Null}" DisplayName="Get Test Data Queue Items" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="GetTestDataQueueItems_1" TestDataQueueItemStatus="All" />
-                  <ui:QueueTrigger QueueName="{x:Null}" TransactionItem="{x:Null}" DisplayName="When New Item Added to Queue" sap:VirtualizedContainerService.HintSize="416,131" sap2010:WorkflowViewState.IdRef="QueueTrigger_1" ItemsActivationThreshold="1" ItemsPerJobActivationTarget="1" MaxJobsForActivation="1" />
+                  <ui:QueueTrigger ExtractedQueueItem="{x:Null}" QueueName="{x:Null}" TransactionItem="{x:Null}" DisplayName="When New Item Added to Queue" sap:VirtualizedContainerService.HintSize="416,131" sap2010:WorkflowViewState.IdRef="QueueTrigger_1" ItemsActivationThreshold="1" ItemsPerJobActivationTarget="1" MaxJobsForActivation="1" />
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
@@ -600,16 +747,17 @@
         </Sequence>
       </ui:CommentOut.Body>
     </ui:CommentOut>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LoginAndExtractData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="944,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Data_Manipulation\LoginAndExtractData.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="LoginAndExtractData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="944,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Data_Manipulation\LoginAndExtractData.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_InvoiceData">[dt_Invoices]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,21314" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="944,21506" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
-        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634,21212" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="634,21404" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="GetAsset" />
+            <Variable x:TypeArguments="x:String" Name="Response" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -630,7 +778,7 @@
           </uga:ApplyEmailLabelsConnections>
           <uga:ArchiveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Archive Email" sap:VirtualizedContainerService.HintSize="600,195" sap2010:WorkflowViewState.IdRef="ArchiveEmailConnections_1" UseConnectionService="True" />
           <uga:DeleteEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Delete Email" sap:VirtualizedContainerService.HintSize="600,246" sap2010:WorkflowViewState.IdRef="DeleteEmailConnections_1" PermanentlyDelete="False" UseConnectionService="True" />
-          <uga:DownloadEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Download Email" sap:VirtualizedContainerService.HintSize="600,195" sap2010:WorkflowViewState.IdRef="DownloadEmailConnections_1" UseConnectionService="True" />
+          <uga:DownloadEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" NewResult="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Download Email" sap:VirtualizedContainerService.HintSize="600,195" sap2010:WorkflowViewState.IdRef="DownloadEmailConnections_1" Result="[email]" UseConnectionService="True" />
           <uga:DownloadAttachmentsConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" Filter="{x:Null}" FilterByFileNames="{x:Null}" NewResult="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Download Email Attachments" ExcludeInlineAttachments="False" sap:VirtualizedContainerService.HintSize="600,246" sap2010:WorkflowViewState.IdRef="DownloadAttachmentsConnections_1" SearchMode="UseSimple" UseConnectionService="True" />
           <uga:ForEachEmailConnections ConnectionAccountName="{x:Null}" CurrentIndex="{x:Null}" Filter="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID0}" Length="{x:Null}" ManualEntryFolder="{x:Null}" AllLabels="W3siSWQiOiJDSEFUIiwiTmFtZSI6IkNIQVQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNFTlQiLCJOYW1lIjoiU0VOVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiSU5CT1giLCJOYW1lIjoiSU5CT1giLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IklNUE9SVEFOVCIsIk5hbWUiOiJJTVBPUlRBTlQiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlRSQVNIIiwiTmFtZSI6IlRSQVNIIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJEUkFGVCIsIk5hbWUiOiJEUkFGVCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiU1BBTSIsIk5hbWUiOiJTUEFNIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9GT1JVTVMiLCJOYW1lIjoiQ0FURUdPUllfRk9SVU1TIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9VUERBVEVTIiwiTmFtZSI6IkNBVEVHT1JZX1VQREFURVMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiTmFtZSI6IkNBVEVHT1JZX1BFUlNPTkFMIiwiVHlwZSI6InN5c3RlbSJ9LHsiSWQiOiJDQVRFR09SWV9QUk9NT1RJT05TIiwiTmFtZSI6IkNBVEVHT1JZX1BST01PVElPTlMiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IkNBVEVHT1JZX1NPQ0lBTCIsIk5hbWUiOiJDQVRFR09SWV9TT0NJQUwiLCJUeXBlIjoic3lzdGVtIn0seyJJZCI6IlNUQVJSRUQiLCJOYW1lIjoiU1RBUlJFRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiVU5SRUFEIiwiTmFtZSI6IlVOUkVBRCIsIlR5cGUiOiJzeXN0ZW0ifSx7IklkIjoiTGFiZWxfMyIsIk5hbWUiOiJJTkJPWFwvTmFyZW5fQmFnYXZhdGh5IiwiVHlwZSI6InVzZXIifSx7IklkIjoiTGFiZWxfNCIsIk5hbWUiOiJJTkJPWFwvQXJ1biIsIlR5cGUiOiJ1c2VyIn0seyJJZCI6IkxhYmVsXzUiLCJOYW1lIjoiSU5CT1hcL1N1cnlhIiwiVHlwZSI6InVzZXIifV0=" AuthScopesInvalid="False" BrowserFolder="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="For Each Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="600,343" sap2010:WorkflowViewState.IdRef="ForEachEmailConnections_1" ImportantOnly="False" IncludeSubfolders="False" MarkAsRead="False" MaxResults="100" StarredOnly="False" UnreadOnly="False" UseConnectionService="True" WithAttachmentsOnly="False">
             <uga:ForEachEmailConnections.Body>
@@ -702,6 +850,12 @@
             </uga:GetNewestEmailConnections.Folder>
           </uga:GetNewestEmailConnections>
           <uga:MarkAsReadUnreadConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Mark Email as Read or Unread" sap:VirtualizedContainerService.HintSize="600,246" sap2010:WorkflowViewState.IdRef="MarkAsReadUnreadConnections_1" MarkAs="Read" UseConnectionService="True" />
+          <ui:ReadTextFile File="{x:Null}" Content="[Response]" DisplayName="Read text from &quot;InputJsonArray.txt&quot;" FileName="InputJsonArray.txt" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <Assign DisplayName="Assign the read text to string variable &quot;Response&quot;" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[Response]</OutArgument>
+            </Assign.To>
+          </Assign>
           <uga:MoveEmailConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" Email="{x:Null}" FolderIdBackup="{x:Reference __ReferenceID3}" ManualFolderPath="{x:Null}" Result="{x:Null}" AuthScopesInvalid="False" BrowseFolderPath="Inbox" BrowserFolderLabelId="INBOX" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Move Email" FolderInputSelectionMode="Browse" sap:VirtualizedContainerService.HintSize="600,246" sap2010:WorkflowViewState.IdRef="MoveEmailConnections_1" UseConnectionService="True">
             <uga:MoveEmailConnections.Folder>
               <ugagm:FolderArgument ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" ManualEntryFolderName="{x:Null}" BrowserFolderId="INBOX" BrowserFolderName="Inbox" InputMode="Browse">
@@ -759,7 +913,7 @@
             </uga:SendEmailConnections.InputTypeBackup>
           </uga:SendEmailConnections>
           <uga:TurnOffAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn Off Automatic Replies" sap:VirtualizedContainerService.HintSize="600,144" sap2010:WorkflowViewState.IdRef="TurnOffAutomaticRepliesConnections_1" UseConnectionService="True" />
-          <uga:TurnOnAutomaticRepliesConnections ConnectionAccountName="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" ContinueOnError="{x:Null}" DisplayName="Turn On Automatic Replies" EndTime="{x:Null}" sap:VirtualizedContainerService.HintSize="600,448" sap2010:WorkflowViewState.IdRef="TurnOnAutomaticRepliesConnections_1" MessageSubject="{x:Null}" SendRepliesOutsideOrganization="{x:Null}" SendRepliesToContactsOnly="{x:Null}" StartTime="{x:Null}" UseConnectionService="True">
+          <uga:TurnOnAutomaticRepliesConnections ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" EndTime="{x:Null}" MessageSubject="{x:Null}" SendRepliesOutsideOrganization="{x:Null}" SendRepliesToContactsOnly="{x:Null}" StartTime="{x:Null}" AuthScopesInvalid="False" ConnectionId="3b57ae83-75e0-425f-ba72-f46dccae2143" DisplayName="Turn On Automatic Replies" sap:VirtualizedContainerService.HintSize="600,448" sap2010:WorkflowViewState.IdRef="TurnOnAutomaticRepliesConnections_1" UseConnectionService="True">
             <uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
               <InArgument x:TypeArguments="x:String" />
             </uga:TurnOnAutomaticRepliesConnections.MessageBodyHtml>
@@ -938,6 +1092,14 @@
               </umafm:DriveItemArgument>
             </umaf:MoveItemConnections.FolderArgument>
           </umaf:MoveItemConnections>
+          <Sequence sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="600,152" sap2010:WorkflowViewState.IdRef="Sequence_35">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Sequence>
           <umaf:ShareItemConnections AccessUrl="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentItemId="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionAccountName="{x:Null}" ContinueOnError="{x:Null}" ExpirationDate="{x:Null}" ItemIdBackup="{x:Reference __ReferenceID14}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" Message="{x:Null}" Recipients="{x:Null}" SharingLinkPassword="{x:Null}" AuthScopesInvalid="False" ConnectionId="b8ac276c-b1ec-4a45-b7f4-18f3a60a5776" DisplayName="Share file or folder" sap:VirtualizedContainerService.HintSize="600,284" sap2010:WorkflowViewState.IdRef="ShareItemConnections_1" ItemSelectionMode="Browse" PermissionType="Edit" RecipientType="PeopleInOrganization" SendInvitationEmail="True" SignInRequired="False" UseConnectionService="True">
             <umaf:ShareItemConnections.DriveItemArgument>
               <umafm:DriveItemArgument BrowserDriveId="{x:Null}" BrowserDriveName="{x:Null}" BrowserItemFriendlyName="{x:Null}" BrowserItemId="{x:Null}" BrowserParentDriveId="{x:Null}" BrowserParentDriveName="{x:Null}" BrowserParentItemFriendlyName="{x:Null}" BrowserParentItemId="{x:Null}" BrowserParentPath="{x:Null}" BrowserSiteUrl="{x:Null}" ConnectionDescriptor="{x:Null}" ConnectionKey="{x:Null}" Item="{x:Null}" ManualEntryDriveName="{x:Null}" ManualEntryItemFullPath="{x:Null}" ManualEntryItemId="{x:Null}" ManualEntryItemRelativePath="{x:Null}" ManualEntryItemUrl="{x:Null}" ManualEntrySiteUrl="{x:Null}" FullPathHint="" ItemSelectionMode="Browse">

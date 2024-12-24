@@ -1,0 +1,15 @@
+﻿{
+  "Name": "DashboardScreen",
+  "Type": "Screen",
+  "Id": "WolVyYqiLkqmxRb6gRXAlw",
+  "Reference": "Wu5tR42aVUuYxU7paGtwMw/WolVyYqiLkqmxRb6gRXAlw",
+  "ParentRef": "Wu5tR42aVUuYxU7paGtwMw/sTwdL3QrJ0-3i_m5i2RwQQ",
+  "Created": "2024-12-19T07:49:15.5332823Z",
+  "Updated": "2024-12-19T07:49:19.9731502Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ],
+  "UpdatedBy": [
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

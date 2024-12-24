@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Dashboard",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "bVxvuej-SkKLZYpkz59QRA",
+  "Reference": "Wu5tR42aVUuYxU7paGtwMw/bVxvuej-SkKLZYpkz59QRA",
+  "ParentRef": "Wu5tR42aVUuYxU7paGtwMw/WolVyYqiLkqmxRb6gRXAlw",
+  "Created": "2024-12-19T07:51:50.8062299Z",
+  "Updated": "2024-12-19T07:51:50.8062299Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

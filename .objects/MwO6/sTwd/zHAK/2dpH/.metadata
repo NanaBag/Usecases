@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Forgot Your Password?",
+  "Type": "Element",
+  "TaxonomyType": "Button",
+  "Id": "2dpHW0ZJRk6NCWODydOXWw",
+  "Reference": "Wu5tR42aVUuYxU7paGtwMw/2dpHW0ZJRk6NCWODydOXWw",
+  "ParentRef": "Wu5tR42aVUuYxU7paGtwMw/zHAKDNPHIEKLn_mkpMj8vw",
+  "Created": "2024-12-19T07:08:59.0533576Z",
+  "Updated": "2024-12-19T07:08:59.0533576Z",
+  "CreatedBy": [
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -15,7 +15,7 @@
     "UiPath.MicrosoftOffice365.Activities": "[2.7.11-preview]",
     "UiPath.MLServices.Activities": "[2.0.3]",
     "UiPath.PDF.Activities": "[3.19.1]",
-    "UiPath.System.Activities": "[22.10.4]",
+    "UiPath.System.Activities": "24.10.7",
     "UiPath.Testing.Activities": "[24.10.1]",
     "UiPath.UIAutomation.Activities": "[22.10.4]",
     "UiPath.WebAPI.Activities": "[1.20.1]"

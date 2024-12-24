@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="tRMIIVoNh0KNHnsq8Z3AHg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" DesignTimeRectangle="423, 586, 78, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Register'" FullSelectorArgument="&lt;webctrl aaname='                                 Register                       *' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                                 Register                       *' tag='A' type='' class='btn bg-warning' check:text='Register' /&gt;" Guid="0112303b-f572-4050-a59b-e870057eef11" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ACME System 1 - Log In' /&gt;" SearchSteps="FuzzySelector, Image" Version="V1" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="d6fe927e18a061b7ddfe844b907bb3f8.png" xmlns="">0AC-vsddB4k2n8o0xY_M86w</imageRef>
+    </TargetAnchorable>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>
